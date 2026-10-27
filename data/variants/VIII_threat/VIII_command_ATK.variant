@@ -1,0 +1,40 @@
+{
+    "displayName": "ATK",
+    "fluxCapacitors": 10,
+    "fluxVents": 10,
+    "goalVariant": true,
+    "hullId": "VIII_command",
+    "hullMods": [
+        "advancedshieldemitter",
+        "extendedshieldemitter",
+        "hardenedshieldemitter",
+        "reinforcedhull",
+        "magazines",
+        "targetingunit",
+        "auxiliarythrusters",
+        "blast_doors",
+        "fluxcoil",
+        "turretgyros"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "VIII_command_ATK",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "VIII_shredder",
+                "WS0004": "VIII_shredder"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "VIII_flak",
+                "WS0002": "VIII_flak"
+            }
+        }
+    ]
+}

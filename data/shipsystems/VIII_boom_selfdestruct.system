@@ -1,0 +1,17 @@
+{
+	"id":"VIII_boom_selfdestruct",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.VIII_BoomSelfDestructAI",
+
+	"statsScript":"data.scripts.shipsystems.VIII_BoomSelfDestruct",
+
+	"canNotCauseOverload":true,
+
+	"aiHints":{
+		"threatRange":1200,
+		"threatAmount":1,
+		"threatAngle":0,
+		"threatArc":360
+	}
+}

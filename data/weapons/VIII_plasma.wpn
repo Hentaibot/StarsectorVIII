@@ -1,0 +1,49 @@
+{
+  "id": "VIII_plasma",
+  "specClass": "projectile",
+  "projectileSpecId": "plasma_shot",
+  "type": "ENERGY",
+  "size": "LARGE",
+  "turretSprite": "graphics/VIII/weapons/VIII_plasma_cannon_Turret_base.png",
+  "turretGlowSprite": "graphics/VIII/weapons/VIII_plasma_cannon_Turret_glow.png",
+  "hardpointSprite": "graphics/VIII/weapons/VIII_plasma_cannon_Turret_base.png",
+  "hardpointGlowSprite": "graphics/VIII/weapons/VIII_plasma_cannon_Turret_glow.png",
+  "glowColor": [
+    255,
+    100,
+    150,
+    255
+  ],
+  "turretOffsets": [
+    30,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    40,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "muzzleFlashSpec": {
+    "length": -34,
+    "spread": 15,
+    "particleSizeMin": 15,
+    "particleSizeRange": 15,
+    "particleDuration": 0.15,
+    "particleCount": 30,
+    "particleColor": [
+      255,
+      100,
+      150,
+      255
+    ]
+  },
+  "fireSoundTwo": "plasma_cannon_fire"
+}

@@ -1,0 +1,47 @@
+{
+
+	"VII_TECH":{
+		"mode":"QUAD_STRIP",# 将引擎航迹改为明显光带的样式
+		"engineColor":[107,195,210,120],
+		"contrailDuration":1.5,# 光带持续时间，对于 QUAD_STRIP 来说该项必须存在
+		"contrailWidthMult":0.67,# 光带宽度，对于 QUAD_STRIP 来说该项必须存在
+		"contrailWidthAddedFractionAtEnd":-1f, # 光带尾部的宽度，0 为默认，小于 0 为末端窄，大于 0 为末端宽
+		"contrailMinSeg":5, # 光带每一小节的渲染长度，不建议改动，对于 QUAD_STRIP 来说该项必须存在
+		"contrailMaxSpeedMult":1.0,
+		"contrailAngularVelocityMult":0.3,
+
+		"glowSizeMult":0.75,# 光带外扩泛光的大小
+
+		"contrailColor":[33,103,120,52],
+		"glowAlternateColor":[35,105,120,55],# 光带外扩泛光的末端颜色
+		"contrailCampaignColor":[107,195,210,150],# 引擎航迹在大地图的颜色
+		"type":"GLOW",
+		"glowSprite":"graphics/fx/engineglow32-orig.png",
+		"glowOutline":"graphics/fx/engineflame32_FLY.png"
+	},
+	"VIII_ATTACK_SWARM":{
+		"engineColor":[0,6,191,255],
+		"contrailParticleSizeMult":15,
+		"contrailParticleDuration":2,
+		"contrailParticleFinalSizeMult":1,
+		"contrailMaxSpeedMult":0.5f,
+		"contrailAngularVelocityMult":0f,
+		"contrailColor":[0,6,191,35],
+		"type":"GLOW" # GLOW or SMOKE
+	},
+	"VII_REFIT":{
+		"engineColor":[107,195,210,120],# 引擎火焰颜色
+		"contrailParticleSizeMult":0,# 引擎航迹大小倍率
+		"contrailParticleDuration":1,# 引擎航迹持续时间
+		"contrailParticleFinalSizeMult":3.12,	# 引擎航迹持续时间	
+		"contrailMaxSpeedMult":0.33,# 引擎航迹飘出速率
+		"contrailAngularVelocityMult":0.33,# 引擎航迹角速度飘出速率
+		"contrailColor":[33,103,120,52],# 引擎航迹颜色
+		"engineGlowGlowMult":1.15,
+		"type":"GLOW" ,# 引擎航迹的类型，可以是 GLOW 或 SMOKE，前者类似淡光，后者类似烟雾
+		"glowSprite":"graphics/fx/engineglow32-orig.png",# 光带材质
+		"glowOutline":"graphics/fx/engineflame32_FLY.png"# 光带外部材质
+	}
+	
+}
+

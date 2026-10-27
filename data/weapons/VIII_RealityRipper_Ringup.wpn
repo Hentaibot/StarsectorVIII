@@ -1,0 +1,49 @@
+{
+  "id": "VIII_RealityRipper_Ringup",
+  "specClass": "beam",
+  "type": "DECORATIVE",
+  "size": "LARGE",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/VIII/weapons/VIII_RealityRipper_Ring/VIII_RealityRipper_Ring_up/VIII_RealityRipper_Ringup00.png",
+  "hardpointSprite": "graphics/VIII/weapons/VIII_RealityRipper_Ring/VIII_RealityRipper_Ring_up/VIII_RealityRipper_Ringup00.png",
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    6.5,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    126.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "coreColor": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "numFrames": 11,
+  "frameRate": 20,
+  "width": 10,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1
+}

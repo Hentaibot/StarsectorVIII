@@ -1,0 +1,67 @@
+{
+    "designTypeColors":{
+		"第八战斗群":[150,46,56,255]
+	},
+    
+
+        "ruleCommandPackages":[
+			"data.scripts.rulecmd",
+                
+		
+	],
+	"plugins":{
+		"VIII_ModPlugin":"data.scripts.plugins.VIII_ModPlugin",
+	},
+	"graphics":{
+
+		
+		"blueprint_packages":{
+			
+		},
+		"campaignEntities":{
+
+		},
+		"hab_glows":{
+
+		},
+		"systems":{
+
+		},
+		"misc":{
+			"VIII_NanoFragments":"graphics/VIII/ships/VIII_NanoFragments.png",
+			"VIII_threat_swarm_glow":"graphics/fx/VIII_hit_glow.png",
+		},
+		"fx":{
+			"VIII_slipstream2":"graphics/fx/VIII_slipstream2.png",
+		    "VIII_slipstream3":"graphics/fx/VIII_slipstream3.png",	
+			"VIII_shieldTexture":"graphics/fx/VIII_shieldTexture.png",
+			"VIII_XLriftcascade_fx":"graphics/fx/VIII_XLriftcascade_fx.png",
+			"VIII_XLriftcascade_fx2":"graphics/fx/VIII_XLriftcascade_fx2.png",
+			"VIII_RealityRipper_fx":"graphics/fx/VIII_RealityRipper_fx.png",
+			"VIII_RealityRipper_fx2":"graphics/fx/VIII_RealityRipper_fx2.png",
+			"trails_trail_smooth":"graphics/fx/trails_smooth.png",
+			"trails_trail_zappy":"graphics/fx/trails_zappy.png",
+
+
+		},		
+		"illustrations":{
+         
+    
+		},
+        "industry":{
+                       
+		},
+
+		"characters":{
+		},
+		"icons":{
+        
+		},
+		"ui":{
+		
+
+		},
+
+	}
+}
+	

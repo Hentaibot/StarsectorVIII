@@ -1,0 +1,134 @@
+{
+    # 导弹唯一标识符
+    "id":"VIII_Fragmentation_MIRV",
+    # 规格类别，此处为导弹
+    "specClass":"missile",
+    # 导弹类型：MIRV（多弹头独立重返大气层载具，即集束导弹）
+    "missileType":"MIRV",
+    # 导弹精灵贴图路径（此处沿用了原版“破坏者”导弹的贴图）
+    "sprite":"graphics/missiles/missile_sabot.png",
+    # 精灵尺寸 [宽度, 高度]
+    "size":[9,18],
+    # 精灵锚点中心 [x, y]
+    "center":[4.5,9],
+    # 碰撞检测半径
+    "collisionRadius":16,
+    # 碰撞分类：MISSILE_NO_FF（导弹，不伤害友军）
+    "collisionClass":"MISSILE_NO_FF",
+    # 爆炸颜色 [R,G,B,A]（纯视觉，其上会叠加一层白色加法混合核心）
+    "explosionColor":[255,165,0,255],
+    # 爆炸视觉半径（纯视觉）
+    "explosionRadius":125,
+    # 引擎物理属性
+    "engineSpec":{"turnAcc":2000,
+				  "turnRate":500,
+				  "acc":2000,
+				  "dec":2000},
+    # 引擎槽位数组
+    "engineSlots":[
+        {
+            # 引擎槽位 ID
+            "id":"ES1",
+            # 引擎在导弹局部坐标系中的位置 [x,y]（负值表示位于导弹尾部）
+            "loc":[-9, 0],
+            # 引擎样式：CUSTOM（自定义）。原版 MISSILE_MIDLINE 样式被注释。
+            "style":"CUSTOM",
+            # 自定义样式参数
+            "styleSpec":{
+                # 渲染模式：QUAD_STRIP（条带四边形）或 PARTICLES（粒子），决定使用哪些参数
+                "mode":"QUAD_STRIP",
+                # 引擎火焰颜色（暖橙色，原版为 [255,145,75,255]）
+                "engineColor":[255,175,100,255],
+                # 尾迹持续时间（秒）
+                "contrailDuration":2,
+                # 尾迹宽度倍率
+                "contrailWidthMult":1,
+                # 尾迹末端宽度变化分数（可为负，使尾迹末端变宽或变窄）
+                "contrailWidthAddedFractionAtEnd":2,
+                # 尾迹最小线段长度（像素）
+                "contrailMinSeg":7,
+                # 尾迹最大速度倍率
+                "contrailMaxSpeedMult":.0f,
+                # 尾迹角速度倍率
+                "contrailAngularVelocityMult":0.5f,
+                # 尾迹生成点距引擎的距离倍率
+                "contrailSpawnDistMult":.5,
+                # 尾迹颜色 [R,G,B,A]
+                "contrailColor":[100,100,100,150],
+                # 辉光尺寸倍率
+                "glowSizeMult":1.5,
+                # 类型：GLOW（加法混合辉光）或 SMOKE（常规混合烟雾）
+                "type":"SMOKE"
+            },
+            # 引擎火焰宽度
+            "width":8.0,
+            # 引擎火焰长度
+            "length":20.0,
+            # 引擎火焰方向（角度，0°为右，180°为左）
+            "angle":180.0
+        }
+    ],
+    # 行为规格：定义 MIRV 的分裂行为
+    "behaviorSpec":{
+        # 行为类型：MIRV（集束导弹分裂）
+        "behavior":"MIRV",
+        # 分裂时距目标的距离（像素）
+        "splitRange":10000,
+        # 分裂距离的随机浮动范围（像素）
+        "splitRangeRange":0,
+        # 分裂前至少飞行的时间（秒）
+        "minTimeToSplit":1,
+        # 是否允许提前分裂
+        "canSplitEarly":true,
+        # 分裂时播放的音效 ID
+        "splitSound":"sabot_srm_split",
+        # 分裂后产生的子弹头数量
+        "numShots":1,
+        # 每个子弹头的伤害
+        "damage":200,
+        # 每个子弹头的 EMP 伤害（需与 weapon_data.csv 中的高亮一致）
+        "emp":200,
+        # 伤害类型：动能（KINETIC）
+        "damageType":KINETIC,
+        # 子弹头的生命值
+        "hitpoints":500,
+        # 是否均匀分散
+        "evenSpread":true,
+        # 扩散总弧度（度）
+        "arc":0,
+        # 扩散角度随机误差（度）
+        "spreadInaccuracy":0,
+        # 子弹头初始扩散速度（像素/秒），原版注释掉 300，改用 1000
+        "spreadSpeed":1000,
+        # 扩散速度的随机浮动范围
+        "spreadSpeedRange":500,
+        # 子弹头的最大飞行距离（仅当子弹头不是导弹时使用）
+        "projectileRange":4000,
+        # 子弹头使用的投射物规格 ID
+        "projectileSpec":"VIII_Fragmentation_warhead2",
+        # 子弹头飞行时产生的烟雾效果规格
+        "smokeSpec":{
+            # 粒子最小尺寸
+            "particleSizeMin":0,
+            # 粒子尺寸随机范围
+            "particleSizeRange":0,
+            # 烟雾云粒子数量
+            "cloudParticleCount":0,
+            # 烟雾云持续时间（秒）
+            "cloudDuration":0,
+            # 烟雾云半径
+            "cloudRadius":0,
+            # 反冲粒子数量（0 表示不生成）
+            "blowbackParticleCount":0,
+            # 反冲持续时间（0 表示无）
+            "blowbackDuration":0,
+            # 反冲长度（0 表示无）
+            "blowbackLength":0,
+            # 反冲扩散程度（0 表示无）
+            "blowbackSpread":0,
+            # 烟雾粒子颜色 [R,G,B,A]
+            "particleColor":[0,0,0,0]
+        }
+    }
+}
+```

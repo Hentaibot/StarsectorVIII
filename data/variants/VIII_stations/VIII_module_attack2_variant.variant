@@ -1,0 +1,52 @@
+{
+  "variantId": "VIII_module_attack2_variant",
+  "hullId": "VIII_module_attack2",
+  "displayName": "ATTACK",
+  "goalVariant": true,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "VIII_plasma",
+        "WS0002": "VIII_plasma",
+        "WS0003": "VIII_plasma"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "VIII_gravitonbeam"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "VIII_heavyburst",
+        "WS0006": "VIII_heavyburst",
+        "WS0007": "VIII_heavyburst"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0008": "VIII_taclaser",
+        "WS0009": "VIII_taclaser",
+        "WS0010": "VIII_taclaser",
+        "WS0011": "VIII_taclaser",
+        "WS0012": "VIII_taclaser",
+        "WS0013": "VIII_taclaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

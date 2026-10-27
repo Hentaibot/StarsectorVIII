@@ -1,0 +1,154 @@
+{
+  "hullName": "VIII_twilight",
+  "hullId": "VIII_twilight",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/VIII/ships/Remnants/VIII_Twilight.png",
+  "style": "HIGH_TECH",
+  "height": 184,
+  "width": 130,
+  "center": [65, 92],
+  "collisionRadius": 117.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 99,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated"
+  ],
+  "builtInWeapons": {
+    "WS0004": "vpdriver"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 285,
+      "angle": 0,
+      "locations": [-26.5, 27]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 285,
+      "angle": -0,
+      "locations": [-26.5, -27]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 165,
+      "angle": 180,
+      "locations": [-54.5, -0]
+    },
+    {
+      "id": "WS0004",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": -0,
+      "locations": [69.5, -0.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-55.5, 53.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-55.5, -53.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-55.5, -48.5],
+      "length": 39,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 10,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-55.5, 48.5],
+      "length": 39,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-56.5, -44],
+      "length": 47.5,
+      "width": 12,
+      "angle": -180,
+      "contrailSize": 12,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-56.5, 44],
+      "length": 47.5,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-74.5, -27.5],
+      "length": 63,
+      "width": 17,
+      "angle": -180,
+      "contrailSize": 17,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-74.5, 27.5],
+      "length": 63,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    70.5, -6,
+    90, -7,
+    90, -16,
+    10, -36.5,
+    -6.5, -54,
+    -23.5, -53,
+    -27, -46,
+    -47, -64,
+    -56, -63,
+    -57, -42.5,
+    -74.5, -31.5,
+    -75, -23,
+    -68.5, -19,
+    -90, -5.5,
+    -90, 5.5,
+    -68.5, 19,
+    -75, 23,
+    -74.5, 31.5,
+    -57, 42.5,
+    -56, 63,
+    -47, 64,
+    -27, 46,
+    -23.5, 53,
+    -6.5, 54,
+    10, 36.5,
+    90, 16,
+    90, 7,
+    70.5, 6
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "hullName": "VIII_module_attack1",
+  "hullId": "VIII_module_attack1",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/VIII/ships/stations/VIII_module_attack1.png",
+  "style": "HIGH_TECH",
+  "height": 276,
+  "width": 234,
+  "center": [117, 79.5],
+  "collisionRadius": 275,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 270,
+  "viewOffset": 0,
+  "builtInMods": [
+    "supercomputer",
+    "turretgyros"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 109,
+      "angle": 0,
+      "locations": [0, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 144,
+      "angle": 25,
+      "locations": [45, 44]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 144,
+      "angle": -25,
+      "locations": [45, -44]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 142,
+      "angle": 0,
+      "locations": [74.5, -0]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 109,
+      "angle": 40,
+      "locations": [123.5, 29]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 109,
+      "angle": -40,
+      "locations": [123.5, -29]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 109,
+      "angle": 0,
+      "locations": [145.5, -0]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 142,
+      "angle": 45,
+      "locations": [85.5, 35]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 142,
+      "angle": -45,
+      "locations": [85.5, -35]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 66,
+      "locations": [102.5, 66]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -66,
+      "locations": [102.5, -66]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 66,
+      "locations": [122.5, 60]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -66,
+      "locations": [122.5, -60]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    -37, -16.5,
+    -43, -38.5,
+    -70.5, -51,
+    -71.5, -66,
+    -27, -70.5,
+    0.5, -99,
+    22, -99,
+    34, -115.5,
+    65.5, -105.5,
+    84.5, -88,
+    158.5, -66,
+    163.5, -54,
+    196, -39,
+    196, -18.5,
+    174, -9.5,
+    174, 9.5,
+    196, 18.5,
+    196, 39,
+    163.5, 54,
+    158.5, 66,
+    84.5, 88,
+    65.5, 105.5,
+    34, 115.5,
+    22, 99,
+    0.5, 99,
+    -27, 70.5,
+    -71.5, 66,
+    -70.5, 51,
+    -43, 38.5,
+    -37, 16.5
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "hullName": "VIII_dimlight",
+  "hullId": "VIII_dimlight",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/VIII/ships/Remnants/VIII_Dimlight.png",
+  "style": "HIGH_TECH",
+  "height": 92,
+  "width": 130,
+  "center": [65, 46],
+  "collisionRadius": 100,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 94.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "advancedcore",
+    "automated"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [27, -36]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [27, 36]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [38, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-34.5, 31.5],
+      "length": 66.5,
+      "width": 29,
+      "angle": 180,
+      "contrailSize": 29,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-34.5, -31.5],
+      "length": 66.5,
+      "width": 29,
+      "angle": -180,
+      "contrailSize": 29,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    41.5, -17,
+    20.5, -25.5,
+    29.5, -32.5,
+    30, -43.5,
+    -2, -62.5,
+    -11, -62,
+    -34, -39,
+    -33.5, -27,
+    -30.5, -15,
+    -43, -6,
+    -43, 6,
+    -30.5, 15,
+    -33.5, 27,
+    -34, 39,
+    -11, 62,
+    -2, 62.5,
+    30, 43.5,
+    29.5, 32.5,
+    20.5, 25.5,
+    41.5, 17
+  ]
+}

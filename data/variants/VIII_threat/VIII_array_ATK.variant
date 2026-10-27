@@ -1,0 +1,68 @@
+{
+    "displayName": "ATK",
+    "fluxCapacitors": 4,
+    "fluxVents": 30,
+    "goalVariant": true,
+    "hullId": "VIII_array",
+    "hullMods": [
+        "frontemitter",
+        "hardenedshieldemitter",
+        "targetingunit",
+        "auxiliarythrusters"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "VIII_array_ATK",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "VIII_devouring_swarm",
+                "WS0002": "VIII_devouring_swarm",
+                "WS0006": "VIII_devouring_swarm"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 002": "VIII_kinetic_fragments",
+                "WS 003": "VIII_kinetic_fragments",
+                "WS 004": "VIII_kinetic_fragments",
+                "WS 006": "VIII_kinetic_fragments",
+                "WS 007": "VIII_kinetic_fragments",
+                "WS 008": "VIII_kinetic_fragments",
+                "WS0003": "VIII_kinetic_fragments",
+                "WS0004": "VIII_kinetic_fragments",
+                "WS0005": "VIII_kinetic_fragments"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0009": "VIII_lightag",
+                "WS0010": "VIII_lightag"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "VIII_lightneedler",
+                "WS0008": "VIII_lightneedler"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0011": "VIII_inimical_emanation",
+                "WS0012": "VIII_inimical_emanation",
+                "WS0013": "VIII_inimical_emanation",
+                "WS0014": "VIII_inimical_emanation"
+            }
+        }
+    ]
+}

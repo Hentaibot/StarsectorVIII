@@ -1,0 +1,56 @@
+{
+    "displayName": "MISSILE",
+    "fluxCapacitors": 20,
+    "fluxVents": 20,
+    "goalVariant": true,
+    "hullId": "VIII_renhai",
+    "hullMods": [
+        "targetingunit",
+        "fluxdistributor",
+        "fluxcoil",
+        "reinforcedhull",
+        "blast_doors",
+        "hardened_subsystems",
+        "fluxbreakers",
+        "hardenedshieldemitter",
+        "advancedoptics",
+        "advancedshieldemitter",
+        "turretgyros"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "VIII_renhai_MISSILE",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "VIII_kinetic_fragments",
+                "WS0005": "VIII_kinetic_fragments",
+                "WS0007": "VIII_kinetic_fragments"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0010": "VIII_typhoon",
+                "WS0011": "VIII_typhoon"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0002": "VIII_seeker_fragment",
+                "WS0004": "VIII_seeker_fragment",
+                "WS0006": "VIII_seeker_fragment"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "VIII_riftcascade"}
+        }
+    ]
+}

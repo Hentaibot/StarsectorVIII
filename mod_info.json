@@ -1,0 +1,29 @@
+{
+  "id": "VIII Battle Group",
+  "name": "人之领第八战斗群",
+  "author": "Me , 耐摔王",
+  "description":"测试用",
+  "version": "0.1",
+  "gameVersion": "0.98a",
+  "dependencies": [
+    {
+            "id": "lw_lazylib",
+            "name": "LazyLib"
+        },
+        {
+            "id": "MagicLib",
+            "name": "MagicLib"
+        },
+        {
+            "id": "BoxUtil",
+            "name": "BoxUtil"
+        },
+        {
+            "id": "shaderLib",
+            "name": "GraphicsLib"
+        },
+    { "id": "lunalib","name": "LunaLib"}
+    ],
+    "modPlugin":"data.scripts.plugins.VIII_ModPlugin",
+    "jars": ["jars/VIII.jar"],
+} 

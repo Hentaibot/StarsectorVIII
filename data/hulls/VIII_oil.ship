@@ -1,0 +1,40 @@
+{
+  "bounds": [
+    -48.5,
+    -14.5,
+    -48.5,
+    12,
+    47,
+    12,
+    47.5,
+    -13.5
+  ],
+  "builtInMods": [],
+  "builtInWeapons": {},
+  "builtInWings": [],
+  "center": [
+    15.5,
+    48.5
+  ],
+  "collisionRadius": 63,
+  "coversColor": "",
+  "engineSlots": [],
+  "height": 97,
+  "hullId": "VIII_oil",
+  "hullName": "VIII_oil",
+  "hullSize": "FRIGATE",
+  "moduleAnchor": [
+    0,
+    0
+  ],
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 61,
+  "spriteName": "graphics/VIII/ships/VIII_oil.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [],
+  "width": 31
+}

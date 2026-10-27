@@ -1,0 +1,18 @@
+{
+	# minelayer for the Rift Beam, none of the stuff here matters except the specClass and the projectileSpecId
+	"id":"VIII_lightning_minelayer",
+	"specClass":"projectile",
+	"type":"MISSILE",
+	"size":"MEDIUM",
+	# does not need weapon sprites, only used to spawn rifts from code
+	"turretSprite":"",
+	"hardpointSprite":"",
+	"hardpointOffsets":[15, 0],
+	"turretOffsets":[10, 0],
+	"hardpointAngleOffsets":[0],
+	"turretAngleOffsets":[0],
+	"barrelMode":"ALTERNATING",
+	"animationType":"SMOKE",
+	"interruptibleBurst":false,
+	"projectileSpecId":"VIII_lightning_minelayer_mine",
+}

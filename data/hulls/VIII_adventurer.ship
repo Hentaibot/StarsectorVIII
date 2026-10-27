@@ -1,0 +1,54 @@
+{
+  "hullName": "冒险者",
+  "hullId": "VIII_adventurer",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/VIII/ships/VIII_adventurer.png",
+  "style": "HIGH_TECH",
+  "height": 238,
+  "width": 158,
+  "center": [79, 119],
+  "collisionRadius": 139,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 137,
+  "viewOffset": 0,
+  "moduleAnchor": [
+    0,
+    0
+  ],
+  "builtInWings": [
+    "mining_drone_wing",
+    "mining_drone_wing"
+  ],
+  "builtInWeapons": {
+    "WS0006": "VIII_fireoil"
+  },
+  "weaponSlots": [{"angle":55,"arc":170,"id":"WS0001","locations":[58,33],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":125,"arc":170,"id":"WS0002","locations":[42,33],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":290,"arc":170,"id":"WS0003","locations":[-20,-35],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":250,"arc":170,"id":"WS0004","locations":[-41,-35],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":0,"arc":360,"id":"LB 1","locations":[-39,0.5,-39,0.5,-34,-1.5,-41,-5,-42.5,1,-39.5,8],"mount":"HIDDEN","size":"LARGE","type":"LAUNCH_BAY"},{"angle":0,"arc":360,"id":"LB 2","locations":[-29.5,0.5,-29.5,8,-34,9.5,-45,9.5],"mount":"HIDDEN","size":"LARGE","type":"LAUNCH_BAY"},{"angle":0,"arc":360,"id":"LB 3","locations":[-47,0,-46.5,-8.5,-39,-7.5,-29,-8],"mount":"HIDDEN","size":"LARGE","type":"LAUNCH_BAY"},{"angle":0,"arc":0,"id":"WS0005","locations":[57.5,-30.5],"mount":"TURRET","size":"LARGE","type":"STATION_MODULE"},{"angle":0,"arc":0,"id":"WS0006","locations":[57.5,-30.5],"mount":"TURRET","size":"LARGE","type":"BUILT_IN"}],
+  "engineSlots": [{"angle":180,"contrailSize":12,"length":78,"width":28,"location":[-98.5,41.5],"style":"HIGH_TECH"},{"angle":180,"contrailSize":12,"length":78,"width":28,"location":[-98.5,-41.5],"style":"HIGH_TECH"},{"angle":205,"contrailSize":12,"length":49,"width":22,"location":[-77,-66.5],"style":"HIGH_TECH"},{"angle":155,"contrailSize":12,"length":49,"width":22,"location":[-77,66.5],"style":"HIGH_TECH"}],
+  "bounds": [
+    92, -11.5,
+    92, 11.5,
+    110.5, 19,
+    110.5, 29,
+    119, 32,
+    117, 39.5,
+    88.5, 55.5,
+    -12, 59.5,
+    -37, 74,
+    -59, 73.5,
+    -98, 48.5,
+    -97, 11,
+    -118.5, 8,
+    -118.5, -8,
+    -97, -11.5,
+    -98, -49,
+    -65.5, -72.5,
+    -37, -75.5,
+    -13, -62.5,
+    32.5, -62,
+    33.5, -53,
+    73.5, -48,
+    73, -28,
+    88.5, -25
+  ],
+  "builtInMods": ["expanded_cargo_holds","auxiliary_fuel_tanks","additional_berthing","hiressensors","solar_shielding","repair_gantry","drive_field_stabilizer","surveying_equipment","tow_cable","efficiency_overhaul","VIII_FleetLogistics"]
+}

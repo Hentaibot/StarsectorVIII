@@ -1,0 +1,36 @@
+{
+  "id": "VIII_kinetic_fragments",
+  "specClass": "projectile",
+  "projectileSpecId": "kinetic_fragments_missile",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.VIII_threat.VIII_KineticFragmentMissileEffect",
+  "turretSprite": "graphics/VIII/weapons/VIII_kinetic_fragments_turret_base.png",
+  "turretGlowSprite": "graphics/weapons/kinetic_frag_turret_glow.png",
+  "hardpointSprite": "graphics/VIII/weapons/VIII_kinetic_fragments_hardpoint_base.png",
+  "hardpointGlowSprite": "graphics/weapons/kinetic_frag_hardpoint_glow.png",
+  "glowColor": [
+    235,
+    255,
+    215,
+    255
+  ],
+  "turretOffsets": [
+    6,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    14,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW",
+  "autocharge": true,
+  "fireSoundTwo": "kinetic_fragments_fire"
+}

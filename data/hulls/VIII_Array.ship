@@ -1,0 +1,322 @@
+{
+  "hullName": "VIII_array",
+  "hullId": "VIII_array",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/VIII/ships/VIII_Qinling.png",
+  "style": "HIGH_TECH",
+  "height": 348,
+  "width": 273,
+  "center": [136.5, 148.5],
+  "collisionRadius": 273,
+  "shieldCenter": [0, 0.5],
+  "shieldRadius": 217,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "VIII_NanoFragments",
+    "VIII_FragmentSwarmHullmod",
+    "VIII_Install",
+    "secondary_fabricator"
+  ],
+  "builtInWeapons": {
+    "WS 002": "VIII_kinetic_fragments",
+    "WS 003": "VIII_kinetic_fragments",
+    "WS 004": "VIII_kinetic_fragments",
+    "WS 006": "VIII_kinetic_fragments",
+    "WS 007": "VIII_kinetic_fragments",
+    "WS 008": "VIII_kinetic_fragments",
+    "WS0001": "VIII_devouring_swarm",
+    "WS0002": "VIII_devouring_swarm",
+    "WS0003": "VIII_kinetic_fragments",
+    "WS0004": "VIII_kinetic_fragments",
+    "WS0005": "VIII_kinetic_fragments",
+    "WS0006": "VIII_devouring_swarm"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [83.5, 6.5]
+    },
+    {
+      "id": "WS 003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [90.5, 6.5]
+    },
+    {
+      "id": "WS 004",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [83.5, -7.5]
+    },
+    {
+      "id": "WS 006",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [78.5, 6.5]
+    },
+    {
+      "id": "WS 007",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [90.5, -7.5]
+    },
+    {
+      "id": "WS 008",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [78.5, -7.5]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [73.5, 6.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [73.5, -7.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [91.5, -0.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [85, -0.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [78.5, -0.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [73.5, -0.5]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 50,
+      "locations": [125, 40]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": -50,
+      "locations": [125, -40]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -66.5,
+      "locations": [105.5, -40.5]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 66.5,
+      "locations": [105.5, 40.5]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 159,
+      "angle": -63,
+      "locations": [36, -38]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 159,
+      "angle": 63,
+      "locations": [36, 38]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 160,
+      "angle": -100,
+      "locations": [-33.5, -65]
+    },
+    {
+      "id": "WS0014",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 160,
+      "angle": 100,
+      "locations": [-33.5, 65]
+    },
+    {
+      "id": "WS0015",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [40.5, -0.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-142, 23.5],
+      "length": 212,
+      "width": 48,
+      "angle": 180,
+      "contrailSize": 48,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-142, -23.5],
+      "length": 212,
+      "width": 48,
+      "angle": -180,
+      "contrailSize": 48,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-119, -74],
+      "length": 110.5,
+      "width": 29,
+      "angle": -180,
+      "contrailSize": 29,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-119, 74],
+      "length": 110.5,
+      "width": 29,
+      "angle": 180,
+      "contrailSize": 29,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-120.5, -62],
+      "length": 157.800003,
+      "width": 46.759998,
+      "angle": -179.5,
+      "contrailSize": 46.759998,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-120.5, 62],
+      "length": 157.800003,
+      "width": 46.759998,
+      "angle": 179.5,
+      "contrailSize": 46.759998,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    91, -23,
+    69.5, -24,
+    69.5, -29.5,
+    167.5, -30.5,
+    197, -49,
+    197, -54,
+    112, -72.5,
+    92, -82,
+    62.5, -84.5,
+    17.5, -113.5,
+    9.5, -110,
+    30.5, -81,
+    16.5, -83.5,
+    -47.5, -137,
+    -65, -134,
+    -94, -104,
+    -131, -87,
+    -131.5, -81,
+    -118.5, -79,
+    -118, -55,
+    -137.5, -39,
+    -146.5, -31,
+    -146.5, 31,
+    -137.5, 39,
+    -118, 55,
+    -118.5, 79,
+    -131.5, 81,
+    -131, 87,
+    -94, 104,
+    -65, 134,
+    -47.5, 137,
+    16.5, 83.5,
+    30.5, 81,
+    9.5, 110,
+    17.5, 113.5,
+    62.5, 84.5,
+    92, 82,
+    112, 72.5,
+    197, 54,
+    197, 49,
+    167.5, 30.5,
+    69.5, 29.5,
+    69.5, 24,
+    91, 23
+  ]
+}

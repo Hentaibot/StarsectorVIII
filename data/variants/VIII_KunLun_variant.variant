@@ -1,0 +1,35 @@
+{
+  "variantId": "VIII_KunLun_variant",
+  "hullId": "VIII_KunLun",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+
+  ],
+  "modules": [
+    {
+      "WS0054": "VIII_KunLun_weaponLplatfrom_variant"
+    },
+    {
+      "WS0055": "VIII_KunLun_weaponRplatfrom_variant"
+    },
+    {
+      "WS0059": "VIII_KunLun_LeftengineMoudle_variant"
+    },
+    {
+      "WS0058": "VIII_KunLun_RightengineMoudle_variant"
+    },
+    {
+      "WS0057": "VIII_Kunlun_Flank_Lplatfrom_variant"
+    },
+    {
+      "WS0056": "VIII_Kunlun_Flank_Rplatfrom_variant"
+    }
+  ],
+  "wings": []
+}

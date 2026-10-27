@@ -1,0 +1,48 @@
+{
+  "variantId": "VIII_module_hangar_R_variant",
+  "hullId": "VIII_module_hangar_R",
+  "displayName": "HANGAR",
+  "goalVariant": true,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "VIII_guardian"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "VIII_taclaser",
+        "WS0006": "VIII_taclaser",
+        "WS0007": "VIII_taclaser",
+        "WS0008": "VIII_taclaser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "VIII_heavyburst",
+        "WS0003": "VIII_heavyburst",
+        "WS0004": "VIII_heavyburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "flash_wing",
+    "flash_wing",
+    "flash_wing",
+    "flash_wing",
+    "flash_wing",
+    "flash_wing"
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "hullName": "VIII_volga",
+  "hullId": "VIII_volga",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/VIII/ships/VIII_Volga.png",
+  "style": "HIGH_TECH",
+  "height": 206,
+  "width": 138,
+  "center": [69, 103],
+  "collisionRadius": 139,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 111,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0007": "VIII_pseudoparticle"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [53.5, 26]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [76.5, -22.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 290,
+      "angle": 35,
+      "locations": [15.5, 30]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 290,
+      "angle": -35,
+      "locations": [15.5, -30]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 300,
+      "angle": 60,
+      "locations": [-48, 46.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 300,
+      "angle": -60,
+      "locations": [-48, -46.5]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": 0,
+      "locations": [15.5, -1]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-82, -1],
+      "length": 96,
+      "width": 23,
+      "angle": 180,
+      "contrailSize": 23,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-98, 18.5],
+      "length": 57.5,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-98, -18.5],
+      "length": 57.5,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-92, 32.5],
+      "length": 49,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-92, -32.5],
+      "length": 49,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    77, -13.5,
+    84, -23,
+    101.5, -22,
+    97, -33,
+    12, -68.5,
+    -18, -56.5,
+    -41.5, -66.5,
+    -100.5, -37,
+    -100.5, 37,
+    -41.5, 66.5,
+    -18, 56.5,
+    12, 68.5,
+    97, 33,
+    101.5, 22,
+    84, 23,
+    77, 13.5
+  ]
+}

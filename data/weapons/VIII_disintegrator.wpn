@@ -1,0 +1,32 @@
+{
+	"id":"VIII_disintegrator",  # this id must match what's in the spreadsheet
+	"specClass":"projectile",
+	"type":"ENERGY",
+	"mountTypeOverride":"HYBRID",
+	"size":"MEDIUM",
+	"turretSprite":"graphics/VIII/weapons/VIII_devouring_swarm_turret_base.png",
+	"turretGlowSprite":"graphics/VIII/weapons/VIII_devouring_swarm_turret_glow.png",
+	"hardpointSprite":"graphics/VIII/weapons/VIII_devouring_swarm_turret_base.png",
+	"hardpointGlowSprite":"graphics/VIII/weapons/VIII_devouring_swarm_turret_glow.png",
+	"glowColor":[80,155,255,200],
+	# 3 barrels in the same spot, with different angles to ensure a spread of shots
+	"turretOffsets":[15, 0, 15, 0, 15, 0],
+	"turretAngleOffsets":[4, -4, 0],
+	"hardpointOffsets":[20, 0, 20, 0, 20, 0],
+	"hardpointAngleOffsets":[4, -4, 0],
+	#"turretOffsets":[10, -2, 10, 0, 10, 2],
+	#"turretAngleOffsets":[5, 0, -5],
+	#"hardpointOffsets":[15, -2, 15, 0, 15, 2],
+	#"hardpointAngleOffsets":[5, 0, -5],
+	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
+	"animationType":"GLOW_AND_FLASH",
+	"muzzleFlashSpec":{"length":40.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":15.0,
+					   "particleSizeMin":20.0,
+					   "particleSizeRange":10.0,
+					   "particleDuration":0.24,
+					   "particleCount":17,
+					   "particleColor":[183,95,70,255]},
+	"projectileSpecId":"disintegrator_shot",  # projectile that will be fired
+	"fireSoundTwo":"disintegrator_fire",
+}

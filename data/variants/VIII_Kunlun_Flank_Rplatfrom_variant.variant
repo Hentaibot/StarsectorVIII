@@ -1,0 +1,14 @@
+{
+  "variantId": "VIII_Kunlun_Flank_Rplatfrom_variant",
+  "hullId": "VIII_Kunlun_Flank_Rplatfrom",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [],
+  "modules": [],
+  "wings": []
+}

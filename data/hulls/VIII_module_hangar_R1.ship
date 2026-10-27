@@ -1,0 +1,118 @@
+{
+  "hullName": "VIII_module_hangar_R1",
+  "hullId": "VIII_module_hangar_R1",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/VIII/ships/stations/VIII_module_hangar_R1.png",
+  "style": "HIGH_TECH",
+  "height": 161,
+  "width": 182,
+  "center": [70.5, 44],
+  "collisionRadius": 203,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 194.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "supercomputer",
+    "turretgyros"
+  ],
+  "weaponSlots": [
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        39, -37.5,
+        35, -44.5,
+        40, -41,
+        44.5, -36,
+        42, -30.5,
+        37.5, -30,
+        33, -35.5,
+        31, -38,
+        34.5, -39.5
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        59, -56,
+        56, -58.5,
+        49.5, -53.5,
+        53, -49,
+        53, -54.5,
+        55.5, -51.5,
+        55.5, -45.5,
+        62, -52.5,
+        65, -60.5,
+        58.5, -51,
+        59, -61.5
+      ]
+    },
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 35,
+      "angle": -45,
+      "locations": [0, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 35,
+      "angle": -45,
+      "locations": [77.5, -33.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 35,
+      "angle": -45,
+      "locations": [39.5, -73.5]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    88.5, -111.5,
+    90, -96.5,
+    105, -80.5,
+    111.5, -83,
+    117, -74,
+    93, -44.5,
+    97, -35.5,
+    80, -12.5,
+    81, -6,
+    69, 9,
+    46.5, 9.5,
+    20, 37.5,
+    -18, 40,
+    -37.5, 23,
+    -43.5, 25,
+    -41.5, 15,
+    -34, 5,
+    -36, -2.5,
+    -25.5, -18.5,
+    -28, -35,
+    -23.5, -42,
+    -22.5, -52,
+    -11, -61.5,
+    -9.5, -76.5,
+    17, -73.5,
+    38.5, -89.5,
+    51.5, -88,
+    79.5, -111.5
+  ]
+}

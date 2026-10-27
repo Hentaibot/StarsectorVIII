@@ -1,0 +1,48 @@
+{
+  "id": "VIII_devouring_swarm",
+  "specClass": "projectile",
+  "projectileSpecId": "devouring_swarm_missile",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.VIII_threat.VIII_DevouringSwarmMissileEffect",
+  "turretSprite": "graphics/VIII/weapons/VIII_devouring_swarm_turret_base.png",
+  "turretGlowSprite": "graphics/weapons/devouring_swarm_turret_glow.png",
+  "hardpointSprite": "graphics/VIII/weapons/VIII_devouring_swarm_hardpoint_base.png",
+  "hardpointGlowSprite": "graphics/weapons/devouring_swarm_hardpoint_glow.png",
+  "glowColor": [
+    130,
+    165,
+    50,
+    255
+  ],
+  "turretOffsets": [
+    7,
+    0,
+    7,
+    -0,
+    7,
+    0
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    13.5,
+    0,
+    13.5,
+    -0,
+    13.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "barrelMode": "LINKED",
+  "animationType": "GLOW",
+  "autocharge": true,
+  "fireSoundTwo": "devouring_swarm_fire"
+}

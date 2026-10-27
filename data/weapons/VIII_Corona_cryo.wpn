@@ -1,0 +1,28 @@
+{
+  "id": "VIII_corona_cryo",
+  "specClass":"projectile",
+	"type":"ENERGY",
+	"mountTypeOverride":"HYBRID",
+	"size":"LARGE",
+	"everyFrameEffect":"com.fs.starfarer.api.impl.combat.dweller.PseudoparticleJetEffect",
+	"turretSprite":"graphics/VIII/weapons/VIII_Transparent.png",
+	"hardpointSprite":"graphics/VIII/weapons/VIII_Transparent.png",
+	"turretOffsets":[6, 0], #15
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[8, 0],#15
+	"hardpointAngleOffsets":[0],
+	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
+	"unaffectedByProjectileSpeedBonuses":true,
+	#"animationType":"GLOW",
+	"animationType":"GLOW_AND_FLASH",
+	"muzzleFlashSpec":{"length":12.0,   # only used if animationType = MUZZLE_FLASH or GLOW_AND_FLASH
+					   "spread":4.0,
+					   "particleSizeMin":8.0,
+					   "particleSizeRange":5.0,
+					   "particleDuration":0.3,
+					   "particleCount":8,
+					   "particleColor":[250,10,45,255]},
+	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
+	"projectileSpecId":"pseudoparticle_jet_shot",  # projectile that will be fired
+	"noImpactSounds":true,
+}

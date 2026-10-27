@@ -1,0 +1,50 @@
+{
+  "id": "VIII_KunLun_Bean",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "LARGE",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/VIII/ships/KunLun/Kunlun_XL_riftcascade.png",
+  "hardpointSprite": "graphics/VIII/ships/KunLun/Kunlun_XL_riftcascade.png",
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    43,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    85,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "beamFireOnlyOnFullCharge": true,
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "darkCore": true,
+  "width": 10,
+  "textureType": ["graphics/fx/emp_arcs.png","graphics/fx/emp_arcs.png"],
+  "pierceSet":[PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER,MISSILE_FF,MISSILE_NO_FF],
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1
+}

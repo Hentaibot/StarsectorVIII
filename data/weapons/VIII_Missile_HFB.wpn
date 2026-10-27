@@ -1,0 +1,56 @@
+{
+  "id": "VIII_Missile_HFB",
+  "specClass": "projectile",
+  "projectileSpecId": "VIII_Missile_HF",
+  "type": "MISSILE",
+  "size": "LARGE",
+  "everyFrameEffect": "data.scripts.weapons.VIII_Missile_HF_Effect",
+  "turretSprite": "graphics/VIII/weapons/VIII_Missile_HFB/VIII_Missile_HFB00.png",
+  "hardpointSprite": "graphics/VIII/weapons/VIII_Missile_HFB/VIII_Missile_HFB00.png",
+  "renderHints": [
+    SUSPEND_RECOIL
+  ],
+  "turretOffsets": [
+    18,
+    0,
+    -9,
+    0
+  ],
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    48,
+    0,
+    21,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "autocharge":"true",
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "numFrames": 17,
+  "frameRate": 20,
+  "smokeSpec": {
+    "particleSizeMin": 20,
+    "particleSizeRange": 12,
+    "cloudParticleCount": 8,
+    "cloudDuration": 2.5,
+    "cloudRadius": 10,
+    "blowbackParticleCount": 4,
+    "blowbackDuration": 2,
+    "blowbackLength": 22,
+    "blowbackSpread": 15,
+    "particleColor": [
+      100,
+      100,
+      100,
+      200
+    ]
+  },
+  "fireSoundTwo": "dragonfire_fire"
+}

@@ -1,0 +1,13 @@
+{
+  "displayName": "VIII_FYP",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": false,
+  "hullId": "VIII_FYP",
+  "hullMods": ["advancedcore","no_weapon_flux"],
+  "permaMods": [],
+  "sMods": [],
+  "variantId": "VIII_FYP",
+  "weaponGroups": [],
+  "wings": []
+}

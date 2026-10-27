@@ -1,0 +1,13 @@
+{
+	"id":"VIII_Textilefiller",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.scripts.shipsystems.VIII_Textilefiller",
+	
+	"weaponGlowColor":[0,122,255,255],
+	"weaponTypes":[BALLISTIC,ENERGY,MISSILE],
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

@@ -1,0 +1,23 @@
+{
+  "variantId": "VIII_array_variant",
+  "hullId": "VIII_array",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0013": "VIII_inimical_emanation",
+        "WS0014": "VIII_inimical_emanation"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

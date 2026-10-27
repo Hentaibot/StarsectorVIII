@@ -1,0 +1,67 @@
+{
+  "id": "VIII_breachpod",
+  "specClass": "projectile",
+  "projectileSpecId": "breach_srm",
+  "type": "MISSILE",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/VIII/weapons/VIII_missiles_M_turret.png",
+  "hardpointSprite": "graphics/VIII/weapons/VIII_missiles_M_turret.png",
+  "turretOffsets": [
+    9,
+    -10,
+    11,
+    -5,
+    8,
+    -7,
+    11,
+    5,
+    9,
+    10,
+    8,
+    7
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    9,
+    -10,
+    11,
+    -5,
+    13,
+    0,
+    11,
+    5,
+    9,
+    10
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "smokeSpec": {
+    "particleSizeMin": 10,
+    "particleSizeRange": 14,
+    "cloudParticleCount": 3,
+    "cloudDuration": 1.5,
+    "cloudRadius": 12,
+    "blowbackParticleCount": 3,
+    "blowbackDuration": 0.45,
+    "blowbackLength": 20,
+    "blowbackSpread": 6,
+    "particleColor": [
+      190,
+      180,
+      160,
+      95
+    ]
+  },
+  "fireSoundTwo": "breach_fire"
+}

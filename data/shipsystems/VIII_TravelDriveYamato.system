@@ -1,0 +1,38 @@
+{
+	"id":"VIII_TravelDriveYamato",
+	"type":"ENGINE_MOD",
+
+	"aiType":"BURN_DRIVE_TOGGLE",
+
+	#"aiType":"CUSTOM",
+	#"aiScript":"data.shipsystems.scripts.ai.Moci_TravelDriveYamatoAI",
+	
+	"statsScript":"data.scripts.shipsystems.VIII_TravelDriveYamatoStats",
+
+	"runScriptWhilePaused":true, # only for the player's ship
+	
+	"engineGlowLengthMult":3.5,
+	"engineGlowWidthMult":1.5,
+	"engineGlowGlowMult":1.5,
+
+	"flameoutOnImpactChance":0,
+
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":true,
+	"alwaysAccelerate":true,
+
+	"useSound":"system_combat_burn_activate",
+	"loopSound":"system_combat_burn_loop",
+	"deactivateSound":"system_combat_burn_deactivate",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"activeSpeedIncrease":200,
+		"burstMovementPotential":0,
+		"averageSpeedIncrease":200,
+	}
+}
+
+
+
+

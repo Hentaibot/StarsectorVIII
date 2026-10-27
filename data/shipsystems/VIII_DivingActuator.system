@@ -1,0 +1,65 @@
+{
+    # 系统唯一标识符
+    "id":"VIII_DivingActuator",
+    # 系统类型（此处为相位隐身类型）
+    "type":"PHASE_CLOAK",
+    # AI 行为类型，同样为相位隐身
+    "aiType":"PHASE_CLOAK",
+    
+    # 系统属性脚本的完整类名，负责具体的数值与状态控制
+    "statsScript":"data.scripts.shipsystems.VIII_DivingActuator",
+    # 是否在游戏暂停时仍然运行脚本（仅对玩家舰船有效）
+    "runScriptWhilePaused":true,
+    # 是否在空闲状态下也运行脚本；为 true 表示 unapply() 永远不会被调用
+    "runScriptWhileIdle":true,
+    # 退出阶段是否阻止其他操作（如转向、加速等）
+    "blockActionsWhileChargingDown":false,
+    
+    # 是否不会导致幅能过载
+    "canNotCauseOverload":true,
+    
+    # 相位高亮精灵的命名后缀（对应 fx 贴图）
+    "phaseHighlight":"_glow1",
+    # 相位漫反射精灵的命名后缀
+    "phaseDiffuse":"_glow2",
+    
+    # 特效颜色1（用于相位光晕的主色）
+    "effectColor1":[255,175,255,255],
+    # 特效颜色2（用于相位光晕的辅色）
+    "effectColor2":[255,0,255,150],
+    
+    # 退出后是否限制转向速率
+    "clampTurnRateAfter":true,
+    # 退出后是否限制最大速度
+    "clampMaxSpeedAfter":true,
+    
+    # 引擎辉光颜色（全透明，即无辉光）
+    "engineGlowColor":[0,0,0,0],
+    # 引擎尾迹颜色（全透明，即无尾迹）
+    "engineGlowContrailColor":[0,0,0,0],
+    # 引擎辉光长度倍率（0 表示不渲染）
+    "engineGlowLengthMult":0,
+    # 引擎辉光宽度倍率（0 表示不渲染）
+    "engineGlowWidthMult":0,
+    # 引擎辉光的光晕倍率（0 表示不渲染）
+    "engineGlowGlowMult":0,
+    
+    # 声音滤波器类型（LOWPASS 表示低通滤波，可模拟相位失真感）
+    "soundFilterType":"LOWPASS",
+    # 声音滤波器主增益（0.8）
+    "soundFilterGain":0.8,
+    # 声音滤波器高频增益（0.25）
+    "soundFilterGainHF":0.25,
+    
+    # 舰船透明度（1 为完全不透明；注释中说明此值由 stats 脚本控制）
+    "shipAlpha":1,
+    # 可选：若想直接设置相位透明度可取消下一行注释，0.25 为原版相位效果的透明度
+    #"shipAlpha":0.25,
+    
+    # 激活音效 ID
+    "useSound":"system_phase_cloak_activate",
+    # 停用音效 ID（此处已启用）
+    "deactivateSound":"system_phase_cloak_deactivate",
+    # 使用次数耗尽时的音效 ID
+    "outOfUsesSound":"system_phase_cloak_collision",
+}

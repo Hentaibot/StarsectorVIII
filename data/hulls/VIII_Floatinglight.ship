@@ -1,0 +1,145 @@
+{
+  "hullName": "VIII_floatinglight",
+  "hullId": "VIII_floatinglight",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/VIII/ships/Remnants/VIII_Floatinglight.png",
+  "style": "HIGH_TECH",
+  "height": 102,
+  "width": 112,
+  "center": [56, 51],
+  "collisionRadius": 90,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 82,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [40, 20.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [40, -20.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 286,
+      "angle": -45,
+      "locations": [21.5, -36]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 286,
+      "angle": 45,
+      "locations": [21.5, 36]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-38, 12.5],
+      "length": 53.5,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-38, -12.5],
+      "length": 53.5,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-46.5, 24.5],
+      "length": 36.5,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-46.5, -24.5],
+      "length": 36.5,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-49, 31.5],
+      "length": 28.5,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-49, -31.5],
+      "length": 28.5,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-48.5, 38.5],
+      "length": 24,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-48.5, -38.5],
+      "length": 24,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    25, -7,
+    45, -8.5,
+    45, -29,
+    41, -30,
+    41.5, -40,
+    20.5, -53.5,
+    -9, -36,
+    -33.5, -54,
+    -50.5, -42.5,
+    -45.5, -19,
+    -37, -15.5,
+    -37, 15.5,
+    -45.5, 19,
+    -50.5, 42.5,
+    -33.5, 54,
+    -9, 36,
+    20.5, 53.5,
+    41.5, 40,
+    41, 30,
+    45, 29,
+    45, 8.5,
+    25, 7
+  ]
+}

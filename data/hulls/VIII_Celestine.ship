@@ -1,0 +1,31 @@
+{
+  "bounds": [131.5,-24,132,1,134,9,155,11,155,19.5,145,21.5,146.5,35.5,166.5,50,188,50,185.5,69,121,90,73,91,71.5,98,33.5,101.5,31.5,108,-36.5,108.5,-38.5,101.5,-48,101.5,-47.5,107,-68.5,127,-111,116.5,-132.5,84.5,-180.5,71.5,-180,27.5,-138.5,17.5,-149.5,11.5,-149.5,-11.5,-140,-16,-151.5,-23.5,-180,-26.5,-180.5,-72.5,-134,-86,-113,-116.5,-69,-127,-47,-109,-50,-103,27.5,-105.5,33.5,-101,45,-100,52.5,-105.5,87.5,-105,100,-90,147,-86,160,-77,161.5,-72.5,182.5,-72,181.5,-65.5,159,-65,156,-41.5,138,-40.5],
+  "builtInMods": ["additional_berthing","auxiliary_fuel_tanks","efficiency_overhaul","expanded_cargo_holds","hiressensors","solar_shielding","surveying_equipment","repair_gantry","drive_field_stabilizer","VIII_FleetLogistics"],
+  "builtInWeapons": {},
+  "builtInWings": [],
+  "center": [
+    127,
+    184
+  ],
+  "collisionRadius": 225,
+  "coversColor": "",
+  "engineSlots": [{"angle":180,"contrailSize":12,"length":95,"width":40,"location":[-149,0],"style":"HIGH_TECH"},{"angle":180,"contrailSize":12,"length":60,"width":15,"location":[-180,31.5],"style":"HIGH_TECH"},{"angle":180,"contrailSize":12,"length":60,"width":15,"location":[-180,-31.5],"style":"HIGH_TECH"},{"angle":180,"contrailSize":12,"length":70,"width":19,"location":[-183,51.5],"style":"HIGH_TECH"},{"angle":180,"contrailSize":12,"length":70,"width":19,"location":[-183,-51.5],"style":"HIGH_TECH"},{"angle":180,"contrailSize":12,"length":29,"width":8,"location":[-181,66.5],"style":"HIGH_TECH"},{"angle":180,"contrailSize":12,"length":29,"width":8,"location":[-181,-66.5],"style":"HIGH_TECH"},{"angle":151,"contrailSize":12,"length":32,"width":11,"location":[-126,97],"style":"HIGH_TECH"},{"angle":209,"contrailSize":12,"length":32,"width":11,"location":[-126,-97],"style":"HIGH_TECH"},{"angle":153,"contrailSize":12,"length":44,"width":15,"location":[-115.5,111.5],"style":"HIGH_TECH"},{"angle":207,"contrailSize":12,"length":44,"width":15,"location":[-115.5,-111.5],"style":"HIGH_TECH"}],
+  "height": 395,
+  "hullId": "VIII_Celestine",
+  "hullName": "塞莱斯延",
+  "hullSize": "CAPITAL_SHIP",
+  "moduleAnchor": [
+    0,
+    0
+  ],
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 222,
+  "spriteName": "graphics/VIII/ships/VIII_Celestine.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [{"angle":0,"arc":360,"id":"LB 1","locations":[-49.5,32,-42.5,33.5,-47,34,-51.5,33.5,-57,32.5,-54,30,-51,30,-46,29.5,-41.5,29.5],"mount":"HIDDEN","size":"LARGE","type":"LAUNCH_BAY"},{"angle":0,"arc":360,"id":"LB 2","locations":[67.5,22.5,53.5,23.5,58,22.5,62.5,22.5,64,20,58.5,19.5],"mount":"HIDDEN","size":"LARGE","type":"LAUNCH_BAY"},{"angle":0,"arc":360,"id":"LB 3","locations":[78,23,74,25.5,70,25.5,73.5,21.5,82,23.5,70.5,19.5],"mount":"HIDDEN","size":"LARGE","type":"LAUNCH_BAY"},{"angle":0,"arc":360,"id":"LB 4","locations":[87.5,22.5,88,19,79.5,19.5,85,20,86.5,24,92.5,23,92,19],"mount":"HIDDEN","size":"LARGE","type":"LAUNCH_BAY"},{"angle":0,"arc":360,"id":"LB 5","locations":[99.5,22.5,99.5,19,95,20,97,25,103.5,23.5,106.5,20,102,20],"mount":"HIDDEN","size":"LARGE","type":"LAUNCH_BAY"},{"angle":55,"arc":210,"id":"WS0001","locations":[137,60],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":65,"arc":210,"id":"WS0002","locations":[104,63],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":65,"arc":210,"id":"WS0003","locations":[23,65],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":90,"arc":210,"id":"WS0004","locations":[-2,65],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":110,"arc":210,"id":"WS0005","locations":[-56,58],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":110,"arc":210,"id":"WS0006","locations":[-104,51],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":250,"arc":252,"id":"WS0007","locations":[-104,-51],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":260,"arc":234,"id":"WS0008","locations":[-79,-48],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":260,"arc":238,"id":"WS0009","locations":[-56,-58],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":260,"arc":238,"id":"WS0010","locations":[20,-53],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":280,"arc":238,"id":"WS0011","locations":[111,-74],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":306,"arc":238,"id":"WS0012","locations":[122,-55],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":310,"arc":156,"id":"WS0013","locations":[143,-55],"mount":"TURRET","size":"SMALL","type":"HYBRID"},{"angle":0,"arc":360,"id":"WS0014","locations":[97,-46],"mount":"TURRET","size":"MEDIUM","type":"HYBRID"},{"angle":110,"arc":360,"id":"WS0015","locations":[-80,53],"mount":"TURRET","size":"MEDIUM","type":"HYBRID"},{"angle":180,"arc":20,"id":"E01","locations":[-149,0],"mount":"TURRET","size":"LARGE","type":"DECORATIVE"}],
+  "width": 254
+}

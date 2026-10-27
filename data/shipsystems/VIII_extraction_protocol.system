@@ -1,0 +1,12 @@
+{
+	"id":"VIII_extraction_protocol",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.VIII_ExtractionProtocolSystemAI",	
+	
+	"runScriptWhileIdle":true,
+	"statsScript":"data.scripts.shipsystems.VIII_ExtractionProtocolSystemScript",
+	
+	"useSound":"system_extraction_protocol",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

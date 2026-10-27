@@ -1,0 +1,52 @@
+{
+  "id": "VIII_hammer",
+  "specClass": "projectile",
+  "projectileSpecId": "VIII_hammer_torp",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "turretSprite": "graphics/VIII/weapons/VIII_torpedo_S_turret.png",
+  "hardpointSprite": "graphics/VIII/weapons/VIII_torpedo_S_turret.png",
+  "renderHints": [
+    RENDER_LOADED_MISSILES
+  ],
+  "turretOffsets": [
+    4,
+    -0,
+    4,
+    0
+  ],
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    8,
+    -4,
+    8,
+    4
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "smokeSpec": {
+    "particleSizeMin": 12,
+    "particleSizeRange": 12,
+    "cloudParticleCount": 6,
+    "cloudDuration": 1.5,
+    "cloudRadius": 10,
+    "blowbackParticleCount": 4,
+    "blowbackDuration": 2,
+    "blowbackLength": 22,
+    "blowbackSpread": 15,
+    "particleColor": [
+      100,
+      100,
+      100,
+      200
+    ]
+  },
+  "fireSoundTwo": "hammer_fire"
+}

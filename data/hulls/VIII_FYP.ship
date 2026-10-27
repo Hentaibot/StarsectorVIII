@@ -1,0 +1,31 @@
+{
+  "bounds": [47,8.5,0.5,18,-21.5,32,-46.5,9.5,-31,7,-31,-7,-46.5,-8,-21.5,-32,0.5,-18,47,-8.5,6.5,-5.5,6.5,5.5],
+  "builtInMods": [],
+  "builtInWeapons": {"WS0001": "VIII_autopulse"},
+  "builtInWings": [],
+  "center": [
+    32,
+    47.5
+  ],
+  "collisionRadius": 65,
+  "coversColor": "",
+  "engineSlots": [{"angle":180,"contrailSize":12,"length":30,"location":[-34.5,0],"style":"HIGH_TECH","width":10},{"angle":180,"contrailSize":12,"length":36,"location":[-42.5,19],"style":"HIGH_TECH","width":13},{"angle":180,"contrailSize":12,"length":36,"location":[-42.5,-19],"style":"HIGH_TECH","width":13},{"angle":207,"contrailSize":12,"length":16,"location":[-32,-28.5],"style":"HIGH_TECH","width":7},{"angle":153,"contrailSize":12,"length":16,"location":[-32,28.5],"style":"HIGH_TECH","width":7}],
+  "height": 95,
+  "hullId": "VIII_FYP",
+  "hullName": "VIII_FYP",
+  "hullSize": "FRIGATE",
+  "moduleAnchor": [
+    0,
+    0
+  ],
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 63,
+  "spriteName": "graphics/VIII/ships/VIII_FYP.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [{"id":"WS0001","size":"LARGE","type":"BUILT_IN","mount":"HIDDEN","arc":10,"angle":0,"locations":[-5.5,0]}],
+  "width": 64
+}

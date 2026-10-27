@@ -1,0 +1,98 @@
+{
+    # 导弹唯一标识符
+    "id":"VIII_Missile_HF",
+    # 规格类别，此处为导弹
+    "specClass":"missile",
+    # 导弹类型（MISSILE）
+    "missileType":"MISSILE",
+    # 导弹精灵贴图路径
+    "sprite":"graphics/VIII/missiles/VIII_Missile_HF.png",
+    # 精灵尺寸 [宽度, 高度]
+    "size":[26,104],
+    # 精灵锚点中心 [x, y]
+    "center":[13,52],
+    # 碰撞检测半径
+    "collisionRadius":75,
+    # 碰撞分类：MISSILE_NO_FF（导弹，不伤害友军）
+    "collisionClass":"MISSILE_NO_FF",
+    # 爆炸颜色 [R,G,B,A]（纯视觉，其上会叠加一层白色加法混合核心）
+    "explosionColor":[255,165,50,255],
+    # 爆炸视觉半径（仅视觉，不影响伤害）
+    "explosionRadius":1200,
+    # 爆炸详细规格
+    "explosionSpec":{
+        # 爆炸持续时间（非视觉，实际帧数）
+        "duration":0.25f,
+        # 爆炸半径
+        "radius":1200,
+        # 核心半径（此范围内造成全额伤害）
+        "coreRadius":1200,
+        # 爆炸碰撞类型：命中舰船与小行星
+        "collisionClass":MISSILE_NO_FF,
+        # 战斗机爆炸碰撞类型相同
+        "collisionClassByFighter":MISSILE_NO_FF,
+        # 爆炸粒子最小尺寸
+        "particleSizeMin":5.0,
+        # 爆炸粒子尺寸随机范围
+        "particleSizeRange":3.0,
+        # 粒子持续时间（秒）
+        "particleDuration":1,
+        # 粒子数量
+        "particleCount":1,
+        # 粒子颜色 [R,G,B,A]
+        "particleColor":[150,100,255,255]
+    },
+    # 引擎物理属性
+    "engineSpec":{
+        # 转向加速度（度/秒²）
+        "turnAcc":1720,
+        # 最大转向速率（度/秒）
+        "turnRate":240,
+        # 直线加速度（游戏单位/秒²）
+        "acc":400,
+        # 减速度（游戏单位/秒²）
+        "dec":400
+    },
+    # 引擎槽位数组
+    "engineSlots":[
+        {
+            # 引擎槽位 ID
+            "id":"ES1",
+            # 引擎在导弹局部坐标系中的位置 [x,y]
+            "loc":[-50, 0],
+            # 引擎样式：CUSTOM（自定义）
+            "style":"CUSTOM",
+            # 自定义样式参数
+            "styleSpec":{
+                # 渲染模式：QUAD_STRIP（条带四边形）或 PARTICLES（粒子），决定使用哪些参数
+                "mode":"QUAD_STRIP",
+                # 引擎火焰颜色
+                "engineColor":[255,165,50,255],
+                # 尾迹持续时间（秒）
+                "contrailDuration":.5,
+                # 尾迹宽度倍率
+                "contrailWidthMult":2,
+                # 尾迹末端宽度变化分数（可为负，使尾迹末端变宽或变窄）
+                "contrailWidthAddedFractionAtEnd":2,
+                # 尾迹最小线段长度（像素）
+                "contrailMinSeg":15,
+                # 尾迹最大速度倍率
+                "contrailMaxSpeedMult":.0f,
+                # 尾迹角速度倍率
+                "contrailAngularVelocityMult":0.5f,
+                # 尾迹生成点距引擎的距离倍率
+                "contrailSpawnDistMult":.5,
+                # 尾迹颜色
+                "contrailColor":[255,165,50,120],
+                # 类型：GLOW（加法混合辉光）或 SMOKE（常规混合烟雾）
+                "type":"SMOKE"
+            },
+            # 引擎火焰宽度
+            "width":15.0,
+            # 引擎火焰长度
+            "length":35.0,
+            # 引擎火焰方向（角度，0°为右，180°为左）
+            "angle":180.0
+        }
+    ]
+}

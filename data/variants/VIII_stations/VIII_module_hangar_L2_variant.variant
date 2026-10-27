@@ -1,0 +1,33 @@
+{
+  "variantId": "VIII_module_hangar_L2_variant",
+  "hullId": "VIII_module_hangar_L2",
+  "displayName": "HANGAR",
+  "goalVariant": true,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "VIII_guardian"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "VIII_pdburst",
+        "WS0003": "VIII_pdburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "flash_wing",
+    "flash_wing"
+  ]
+}

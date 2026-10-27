@@ -1,0 +1,37 @@
+{
+  "hullName": "VIII_Kunlun_Flank_Rplatfrom",
+  "hullId": "VIII_Kunlun_Flank_Rplatfrom",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/VIII/ships/KunLun/VIII_Kunlun_Flank_R.png",
+  "style": "LOW_TECH",
+  "height": 227,
+  "width": 145,
+  "center": [72.5, 113.5],
+  "collisionRadius": 142,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 139,
+  "viewOffset": 0,
+  "weaponSlots": [],
+  "engineSlots": [],
+  "builtInMods": [
+    "VIII_KunLunMoudle",
+    "VIII_supercomputer",
+    "VIII_BaseDesignFrame",
+    "VIII_ArmorRestoration"
+  ],
+  "bounds": [
+    108, 46,
+    72.5, 24,
+    53.5, 5,
+    16.5, -11,
+    -7.5, -17,
+    -102, -71,
+    -111.5, -68.5,
+    -35.5, -11.5,
+    -25, 4,
+    -2, 15,
+    10, 38,
+    44.5, 49.5,
+    103, 49
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "VIII_XLriftcascade",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "LARGE",
+  "beamEffect": "data.scripts.weapons.VIII_XLriftcascadeBeamEffect",
+  "collisionClass": "RAY_FIGHTER",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/VIII/weapons/VIII_XL/VIII_XLriftcascade_turret_base.png",
+  "turretGlowSprite": "graphics/VIII/weapons/VIII_XL/VIII_XLriftcascade_turret_glow.png",
+  "hardpointSprite": "graphics/VIII/weapons/VIII_XL/VIII_XLriftcascade_turret_base.png",
+  "hardpointGlowSprite": "graphics/VIII/weapons/VIII_XL/VIII_XLriftcascade_turret_glow.png",
+  "glowColor": [
+    100,
+    60,
+    255,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    51,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    115.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    100,
+    60,
+    255,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "width": 80,
+  "textureType": [
+    "graphics/fx/VIII_XLriftcascade_fx.png",
+    "graphics/fx/VIII_XLriftcascade_fx2.png"
+  ],
+  "textureScrollSpeed": 125,
+  "pixelsPerTexel": 5,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF
+  ],
+  "fireSoundTwo": "riftcascade_loop",
+  "coreWidthMult": 0.4
+}

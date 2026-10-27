@@ -1,0 +1,13 @@
+{
+  "displayName": "VIII_oil",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": false,
+  "hullId": "VIII_oil",
+  "hullMods": ["auxiliary_fuel_tanks"],
+  "permaMods": [],
+  "sMods": [],
+  "variantId": "VIII_oil",
+  "weaponGroups": [],
+  "wings": []
+}

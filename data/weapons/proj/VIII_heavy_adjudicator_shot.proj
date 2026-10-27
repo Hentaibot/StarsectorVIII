@@ -1,0 +1,28 @@
+{
+	"id":"VIII_heavy_adjudicator_shot",
+	"specClass":"projectile",
+	"onFireEffect":"com.fs.starfarer.api.impl.combat.HeavyAdjudicatorEffect",
+	"onHitEffect":"data.scripts.weapons.VIII_heavy_adjudicatorOnHitEffect",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FIGHTER",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":125.0,
+	"hitGlowRadius":50,
+	"width":11.5,
+	"fadeTime":0.20,
+	"fringeColor":[52, 93, 255,255],
+	"coreColor":[52, 93, 255,255],	
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/missiles/shell_large_devastator.png",
+	"glowColor":[52, 93, 255,255],
+	"glowRadius":35,
+	
+					}
+	#"fringeColor":[255,195,100,205],
+	#"coreColor":[255,230,155,255],	
+	#"glowColor":[255,100,65,127],
+	#"particleColor":[255,195,100,255],
+	#"detailedExplosionFlashColorFringe":[255,195,100,255],
+	#"detailedExplosionFlashColorCore":[255,195,100,255],						
+}

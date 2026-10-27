@@ -1,0 +1,24 @@
+{
+  "variantId": "VIII_blizzard_variant",
+  "hullId": "VIII_blizzard",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "VIII_heavyburst",
+        "WS0002": "VIII_voidblaster",
+        "WS0003": "VIII_devouring_swarm"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

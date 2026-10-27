@@ -1,0 +1,20 @@
+name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,noVent,isPhaseCloak,tags,icon
+#舰船系统名称,舰船系统id,战术系统每秒产生的幅能数量,战术系统每秒产生的幅能数量与舰船基础耗散速率的比率，与flux/second可共同作用,战术系统每秒产生的幅能数量与舰船基础幅能容量的比率，与flux/second、f/s (base rate)可共同作用,战术系统每次启动产生的幅能数量,战术系统每次启动产生的幅能数量与舰船基础耗散速率的比率，与flux/use可共同作用,战术系统每次启动产生的幅能数量与舰船基础耗散速率的比率，与flux/use、f/u (base rate)可共同作用,战术系统每次启动所消耗的 CR,战术系统充能次数，不填为无限,在max uses有限的情况下启动，充能次数的恢复速率，单位是 次/秒，不填则为不可恢复,前摇时长。战术系统前摇时往往也有效果，从无到渐强,全功率激活时长,后摇时长。战术系统后摇时往往也有效果，从全到渐弱,冷却时长。,设为 TRUE 时，战术系统将变为开关式的。默认为 FALSE,设为 TRUE 时，战术系统启动时无法耗散幅能。默认为 FALSE,设为 TRUE 时，战术系统启动时无法耗散硬幅能。默认为 FALSE,设为 TRUE 时，战术系统产生的幅能为硬幅能，否则为软幅能。默认为 FALSE,设为 TRUE 时，战术系统启动时无法开火。默认为 FALSE,设为 TRUE 时，战术系统启动时无法转向。默认为 FALSE,设为 TRUE 时，战术系统启动时无法左右平移。默认为 FALSE,设为 TRUE 时，战术系统启动时无法向前加速。默认为 FALSE,设为 TRUE 时，战术系统启动时无法启动护盾或右键战术系统。默认为 FALSE,设为 TRUE 时，战术系统启动时无法按 V 排散。默认为 FALSE,设为 TRUE 时，战术系统被认为是一种相位，虽然实际上未必有相位效果。默认为 FALSE,进阶内容，可随意编纂，原版范畴内仅restricted和uses_damper_ai,战术系统的图标贴图路径
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+闪流驱动器,VIII_FlashstreamDrive,1,,,,,0.25,,,,0.5,4.5,1,10,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
+重装瞬潜驱动,VIII_DivingActuator_HF,,,,,,,,3,0.066,0.5,5,0.5,2,,,TRUE,,,,,,TRUE,,TRUE,,graphics/icons/hullsys/phase_cloak.png
+瞬潜驱动器,VIII_DivingActuator,,,,,,,,3,0.066,0.5,3,0.5,2,,,TRUE,,,,,,TRUE,,TRUE,,graphics/icons/hullsys/phase_cloak.png
+集群终结协议,VIII_drone_strike,,,,600,,,,,,0,0.05,0.2,0,,,,,,,,,,,,offensive,graphics/icons/hullsys/termination_sequence.png
+突击驱动器,VIII_maneuveringjets,,,0.1,,,,,,,0.5,,0.5,1,TRUE,,,TRUE,,,,,,,,movement,graphics/icons/hullsys/maneuvering_jets.png
+熵谐振器,VIII_EntropyResonator,1,,,,,0.25,,,,4,10,2,10,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
+突击闪现,VIII_displacer,,,,,,,,2,0.1,0.25,,0.25,0,,TRUE,,TRUE,,,,,,,,movement,graphics/icons/hullsys/displacer.png
+纺织装填器,VIII_Textilefiller,,,,,,,,2,0.07,1,5,0.5,,,,,,,,,,,,,offensive,graphics/icons/hullsys/ammo_feeder.png
+阵地协议,VIII_lidararray,1,,,,,,,,,1.5,7.5,1,10,,,,,,,,,,,,offensive,graphics/icons/hullsys/lidar_barrage.png
+纳米建造群,VIII_construction_swarm,,,,,,,,,,0.1,,0.4,,,,,,,,,,,,,,graphics/icons/hullsys/construction_swarm.png
+波动推进,VIII_TravelDriveYamato,1,,,,,,,,,1,,1,4,TRUE,,,,,TRUE,TRUE,TRUE,TRUE,,,movement,graphics/icons/hullsys/combat_burn.png
+能量之鞭,VIII_energy_lash,,,,,,,,,,1,,0.1,,,,,,,,,,,,,"restricted, offensive, defensive",graphics/icons/hullsys/energy_lash.png
+撤离协议,VIII_extraction_protocol,,,,,,,,,,1,5,1,20,,,,,,,,,,,,defensive,graphics/icons/hullsys/extraction_protocol.png
+碎片齐射,VIII_AmplifierSystem,,,,,,,,,,1,20,1,45,,,,,,,,,,,,offensive,graphics/icons/hullsys/fragment_volley.png
+油罐自爆,VIII_oil_selfdestruct,,,,,,,,1,,5,1,0.2,0,,,,,,,,,,,,hide_in_codex,graphics/icons/hullsys/high_energy_focus.png
+时流之壳·改,VIII_normandy_temporalshell,1,,,,,0.25,,,,4,10,2,10,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
+爆破自爆,VIII_boom_selfdestruct,,,,,,,,1,,5,1,0.2,0,,,,,,,,,,,,hide_in_codex,graphics/icons/hullsys/high_energy_focus.png

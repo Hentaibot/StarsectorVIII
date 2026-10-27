@@ -1,0 +1,25 @@
+{
+	"id":"VIII_AmplifierSystem",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.VIII_AmplifierSystemAI",
+	
+	"runScriptWhileIdle":true,
+	#"canUseWhileRightClickSystemOn":true,
+	
+	"statsScript":"data.scripts.shipsystems.VIII_AmplifierSystem",
+	
+	"useSound":"energy_lash_activate",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"threatRange":2000,
+		"threatAmount":4,
+		"threatAngle":0,
+		"threatArc":360,
+	}
+}
+
+
+
+

@@ -1,0 +1,25 @@
+{
+	"id":"VIII_construction_swarm",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.VIII_ConstructionSwarmSystemAI",	
+	
+	"runScriptWhileIdle":true,
+	#"canUseWhileRightClickSystemOn":true,
+	
+	"statsScript":"data.scripts.shipsystems.VIII_ConstructionSwarmSystemScript",
+	
+	"useSound":"system_construction_swarm",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"threatRange":1500,
+		"threatAmount":4,
+		"threatAngle":0,
+		"threatArc":360,
+	}
+}
+
+
+
+

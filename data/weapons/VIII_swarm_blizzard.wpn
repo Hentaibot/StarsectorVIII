@@ -1,0 +1,36 @@
+{
+  "id": "VIII_swarm_blizzard",
+  "specClass": "projectile",
+  "projectileSpecId": "swarm_launcher_shot",
+  "type": "HYBRID",
+  "size": "SMALL",
+  "everyFrameEffect": "data.scripts.VIII_threat.VIII_SwarmLauncherEffect",
+  "turretSprite": "",
+  "turretGlowSprite": "graphics/weapons/swarm_launcher_turret_glow.png",
+  "hardpointSprite": "",
+  "hardpointGlowSprite": "graphics/weapons/swarm_launcher_hardpoint_glow.png",
+  "glowColor": [
+    130,
+    155,
+    145,
+    255
+  ],
+  "turretOffsets": [
+    10,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    25.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW",
+  "autocharge": true,
+  "fireSoundTwo": "threat_swarm_launched"
+}

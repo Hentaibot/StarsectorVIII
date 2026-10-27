@@ -1,0 +1,96 @@
+{
+    # 投射物唯一标识符（必须保持英文原样，供其他文件引用）
+    "id":"VIII_lightning_minelayer_mine",
+    # 规格类别：导弹
+    "specClass":"missile",
+    # 导弹子类型：PHASE_MINE（相位水雷）
+    "missileType":"PHASE_MINE",
+    # 主体贴图路径为空串，表示不绘制贴图（配合下方的 mineHasNoSprite 使用）
+    "sprite":"",
+    # 辉光贴图路径为空串，表示不绘制辉光贴图
+    "glowSprite":"",
+    # 辉光颜色 [R,G,B,A]，同时被 NegativeExplosionVisual（负爆炸视觉）效果用作颜色
+    "glowColor":[255,50,50,255],
+    # 精灵尺寸 [宽度, 高度]（此处贴在 96x96 的画布上）
+    "size":[96,96],
+    # 精灵锚点中心 [x, y]
+    "center":[48,48],
+    # 碰撞检测半径
+    "collisionRadius":20,
+    # 碰撞分类：NONE，表示不与任何物体产生碰撞判定
+    "collisionClass":"NONE",
+    # 熄火后的碰撞分类：同样为 NONE，继续保持无碰撞
+    "collisionClassAfterFlameout":"NONE",
+    # 从熄火开始到完全淡出结束的总时长（秒）
+    "flameoutTime":0.1,
+    # 淡出动画持续时间（秒）
+    "fadeTime":0.1,
+    # 不渲染引擎辉光所持续的时间（秒）
+    "noEngineGlowTime":0.05,
+    # 爆炸颜色 [R,G,B,A]（本文件中未使用，标注为 unused）
+    "explosionColor":[175,100,255,255],
+    # 爆炸视觉半径（纯视觉，此处为 0 表示不做内置爆炸表现）
+    "explosionRadius":0,
+    # 是否渲染目标指示菱形：false 表示战斗视图中不显示目标菱形，也不会被诱饵弹（flare）锁定
+    "renderTargetIndicator":false,
+    # 引擎物理属性
+    "engineSpec":{
+        # 转向加速度（度/秒²）
+        "turnAcc":500,
+        # 最大转向速率（度/秒）
+        "turnRate":150,
+        # 直线加速度（游戏单位/秒²）
+        "acc":500,
+        # 减速度（游戏单位/秒²）
+        "dec":500
+    },
+    # 行为规格
+    "behaviorSpec":{
+        # 行为类型：PROXIMITY_FUSE（近炸引信，靠近目标后引爆）
+        "behavior":"PROXIMITY_FUSE",
+        # 爆炸时调用的自定义 Java 效果类（裂光闪电雷爆炸），真正的伤害/视觉由它生成
+        "onExplosionEffect":"data.scripts.weapons.VIII_LightningMineExplosion",
+        # 触发爆炸的判定距离（0 表示不依靠距离触发，改由效果类/接触逻辑处理）
+        "range":0,
+        # 是否缓慢加速到最大速度（true 表示水雷缓慢漂移而非喷射式加速）
+        "slowToMaxSpeed":true,
+        # 引爆延迟（秒）
+        "delay":0,
+        # "pingSound":"launch_flare_1",   # 已注释：触发时的提示音效
+        # 提示脉冲的颜色 [R,G,B,A]，全透明即不显示脉冲
+        "pingColor":[0,0,0,0],
+        # 该水雷没有精灵贴图（关键开关，避免引擎去加载空贴图并报错）
+        "mineHasNoSprite":true,
+        # 闪烁频率倍率（0.25 表示比默认慢 4 倍）
+        "flashRateMult":0.25,
+        # 提示脉冲的半径
+        "pingRadius":100,
+        # 提示脉冲的持续时间（秒）
+        "pingDuration":0.25,
+        # "windupSound":"mine_windup_heavy",   # 已注释：起爆前的蓄能音效
+        # "windupDelay":1,                     # 已注释：蓄能延迟（秒）
+        # 爆炸规格（此处的数值多为占位，真实表现由 onExplosionEffect 接管）
+        "explosionSpec":{
+            # 爆炸效果持续时间（秒），末尾 f 为旧式浮点标记
+            "duration":0.1f,
+            # 爆炸总半径
+            "radius":80,
+            # 核心半径：在此半径内造成全额伤害
+            "coreRadius":60,
+            # 爆炸投射物的碰撞分类：PROJECTILE_NO_FF（不伤害友军）
+            "collisionClass":PROJECTILE_NO_FF,
+            # 由战机引发的爆炸所使用的碰撞分类：同样为 PROJECTILE_NO_FF
+            "collisionClassByFighter":PROJECTILE_NO_FF,
+            # 粒子持续时间（秒）
+            "particleDuration":1,
+            # 粒子数量（0 表示不生成内置粒子）
+            "particleCount":0,
+            # 粒子颜色 [R,G,B,A]，全透明即不可见
+            "particleColor":[0,0,0,0],
+            # 爆炸颜色 [R,G,B,A]，全透明即不做内置爆炸闪光
+            "explosionColor":[0,0,0,0],
+            # 爆炸音效 ID（裂光闪电爆炸）
+            "sound":"rift_lightning_explosion"
+        }
+    }
+}

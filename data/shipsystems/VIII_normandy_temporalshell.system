@@ -1,0 +1,25 @@
+{
+	"id":"VIII_normandy_temporalshell",
+	"type":"STAT_MOD",
+	"aiType":"TEMPORAL_SHELL",
+
+	# 与星星核心的 temporalshell 完全一致：脚本、音效、滤镜、AI 提示全部照搬，
+	# 额外的"受击 30 倍舰船时间流速"由 VIII_NormandyShell 船插 + 监听器实现。
+	"statsScript":"com.fs.starfarer.api.impl.combat.TemporalShellStats",
+
+	"soundFilterType":"LOWPASS",
+	"soundFilterGain":0.75,
+	"soundFilterGainHF":0.5,
+
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"system_temporalshell",
+	"loopSound":"system_temporalshell_loop",
+	"deactivateSound":"system_temporalshell_off",
+	"outOfUsesSound":"gun_out_of_ammo",
+
+	"aiHints":{
+		"activeSpeedIncrease":100,
+		"burstMovementPotential":0,
+		"averageSpeedMult":1.46
+	}
+}

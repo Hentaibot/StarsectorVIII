@@ -1,0 +1,17 @@
+{
+	"id":"VIII_oil_selfdestruct",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.VIII_OilSelfDestructAI",
+
+	"statsScript":"data.scripts.shipsystems.VIII_OilSelfDestruct",
+
+	"canNotCauseOverload":true,
+
+	"aiHints":{
+		"threatRange":700,
+		"threatAmount":1,
+		"threatAngle":0,
+		"threatArc":360
+	}
+}

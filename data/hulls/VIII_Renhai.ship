@@ -1,0 +1,200 @@
+{
+  "hullName": "VIII_renhai",
+  "hullId": "VIII_renhai",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/VIII/ships/VIII_Renhai.png",
+  "style": "HIGH_TECH",
+  "height": 226,
+  "width": 176,
+  "center": [88, 113],
+  "collisionRadius": 135,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 113,
+  "viewOffset": 0,
+  "builtInMods": [
+    "vast_hangar",
+    "automated",
+    "ecm",
+    "VIII_FragmentSwarmHullmod",
+    "VIII_Install",
+    "VIII_NanoFragments"
+  ],
+  "builtInWeapons": {
+    "WS0003": "VIII_riftcascade"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [43, 0.5]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -52.5, -37,
+        -52.5, -34.5,
+        -49, -37,
+        -50, -39.5,
+        -47, -38,
+        -47, -41.5
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -52, 37.5,
+        -49.5, 39.5,
+        -52.5, 35,
+        -46.5, 39.5,
+        -49.5, 34.5,
+        -48, 37
+      ]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": -56.5,
+      "locations": [-22, -32]
+    },
+    {
+      "id": "WS0011",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 56.5,
+      "locations": [-22, 32]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": -45,
+      "locations": [7, -39.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 45,
+      "locations": [7, 39.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 45,
+      "locations": [5, 41.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": -45,
+      "locations": [5, -41.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 45,
+      "locations": [3, 43.5]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": -45,
+      "locations": [3, -43.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-85.5, -0],
+      "length": 77.5,
+      "width": 27,
+      "angle": 180,
+      "contrailSize": 27,
+      "style": "CUSTOM",
+      "styleId": "VII_REFIT"
+    },
+    {
+      "location": [-73.5, 46.5],
+      "length": 38.5,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "CUSTOM",
+      "styleId": "VII_REFIT"
+    },
+    {
+      "location": [-73.5, -46.5],
+      "length": 38.5,
+      "width": 12,
+      "angle": -180,
+      "contrailSize": 12,
+      "style": "CUSTOM",
+      "styleId": "VII_REFIT"
+    }
+  ],
+  "bounds": [
+    -80, 13,
+    -87.5, 17,
+    -87.5, 27.5,
+    -73, 41,
+    -73, 48.5,
+    -79.5, 53,
+    -42, 75,
+    -32.5, 72,
+    9.5, 84.5,
+    -22, 56.5,
+    14, 37.5,
+    105, 13.5,
+    111.5, 6.5,
+    60.5, 5.5,
+    60.5, -5.5,
+    111.5, -6.5,
+    105, -13.5,
+    14, -37.5,
+    -22, -56.5,
+    9.5, -84.5,
+    -32.5, -72,
+    -42, -75,
+    -79.5, -53,
+    -73, -48.5,
+    -73, -41,
+    -87.5, -27.5,
+    -87.5, -17,
+    -80, -13,
+    -110, -0
+  ]
+}

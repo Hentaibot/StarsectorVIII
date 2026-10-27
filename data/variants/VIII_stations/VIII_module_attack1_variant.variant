@@ -1,0 +1,58 @@
+{
+  "variantId": "VIII_module_attack1_variant",
+  "hullId": "VIII_module_attack1",
+  "displayName": "ATTACK",
+  "goalVariant": true,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "VIII_tachyonlance",
+        "WS0002": "VIII_tachyonlance",
+        "WS0003": "VIII_tachyonlance"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "VIII_ionbeam"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "VIII_heavyburst",
+        "WS0006": "VIII_heavyburst",
+        "WS0007": "VIII_heavyburst"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0008": "VIII_lightneedler",
+        "WS0009": "VIII_lightneedler"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0010": "VIII_taclaser",
+        "WS0011": "VIII_taclaser",
+        "WS0012": "VIII_taclaser",
+        "WS0013": "VIII_taclaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

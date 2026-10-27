@@ -1,0 +1,45 @@
+{
+  "variantId": "VIII_indomitable_variant",
+  "hullId": "VIII_indomitable",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 50,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "VIII_neoferric_quadcoil",
+        "WS0002": "VIII_neoferric_quadcoil",
+        "WS0003": "VIII_neoferric_quadcoil",
+        "WS0004": "VIII_neoferric_quadcoil",
+        "WS0005": "VIII_guardian",
+        "WS0006": "VIII_guardian",
+        "WS0007": "VIII_guardian",
+        "WS0008": "VIII_guardian",
+        "WS0009": "VIII_dualflak",
+        "WS0010": "VIII_dualflak",
+        "WS0011": "VIII_dualflak",
+        "WS0012": "VIII_dualflak",
+        "WS0013": "VIII_voidblaster",
+        "WS0014": "VIII_voidblaster",
+        "WS0015": "VIII_dualflak",
+        "WS0016": "VIII_dualflak",
+        "WS0017": "VIII_irpulse",
+        "WS0018": "VIII_irpulse",
+        "WS0019": "VIII_irpulse",
+        "WS0020": "VIII_irpulse",
+        "WS0021": "VIII_irpulse",
+        "WS0022": "VIII_irpulse",
+        "WS0023": "VIII_irpulse",
+        "WS0024": "VIII_irpulse"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

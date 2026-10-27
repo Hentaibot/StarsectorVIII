@@ -1,0 +1,255 @@
+{
+  "hullName": "VIII_rusticolus",
+  "hullId": "VIII_rusticolus",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/VIII/ships/VIII_Rusticolus.png",
+  "style": "HIGH_TECH",
+  "height": 258,
+  "width": 250,
+  "center": [125, 127],
+  "collisionRadius": 227,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 187.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "advancedcore"
+  ],
+  "builtInWeapons": {
+    "WS0009": "VIII_riftlightning"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [102, 21]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [102, -21]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 125,
+      "angle": 45,
+      "locations": [61, 26]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 125,
+      "angle": -45,
+      "locations": [61, -26]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 60,
+      "locations": [33, 27]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": -60,
+      "locations": [33, -27]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": 115,
+      "locations": [-36, 51]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 140,
+      "angle": -115,
+      "locations": [-36, -51]
+    },
+    {
+      "id": "WS0009",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [80, -0]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [-22, 87]
+    },
+    {
+      "id": "WS0011",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [-22, -87]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-109.5, 32.5],
+      "length": 64.5,
+      "width": 22,
+      "angle": 180,
+      "contrailSize": 22,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-109.5, -32.5],
+      "length": 64.5,
+      "width": 22,
+      "angle": -180,
+      "contrailSize": 22,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-105, 19],
+      "length": 53.5,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 14,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-105, -19],
+      "length": 53.5,
+      "width": 14,
+      "angle": -180,
+      "contrailSize": 14,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-71.5, -78.5],
+      "length": 24.467808,
+      "width": 14.328478,
+      "angle": -154.5,
+      "contrailSize": 14.328478,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-71.5, 78.5],
+      "length": 24.467808,
+      "width": 14.328478,
+      "angle": 154.5,
+      "contrailSize": 14.328478,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-54.5, -93.5],
+      "length": 17.802326,
+      "width": 9.607736,
+      "angle": -154.5,
+      "contrailSize": 9.607736,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-54.5, 93.5],
+      "length": 17.802326,
+      "width": 9.607736,
+      "angle": 154.5,
+      "contrailSize": 9.607736,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -97.5, -2.5,
+    -85, -9,
+    -96, -10,
+    -105, -16,
+    -105, -22,
+    -103, -24,
+    -110, -27,
+    -110.5, -36,
+    -123, -41,
+    -123, -46,
+    -77, -68,
+    -75.5, -75.5,
+    -49, -100,
+    -32, -100,
+    -12, -95,
+    -15, -87,
+    -12, -79,
+    -25, -76,
+    -4, -69,
+    -4.5, -64,
+    1, -65,
+    14.5, -57.5,
+    27, -62,
+    122, -33,
+    126, -20,
+    112, -20,
+    112, -17,
+    116, -16,
+    113.5, -12,
+    69, -10,
+    82, -8,
+    91, -3,
+    82, -0,
+    91, 3,
+    82, 8,
+    69, 10,
+    113.5, 12,
+    116, 16,
+    112, 17,
+    112, 20,
+    126, 20,
+    122, 33,
+    27, 62,
+    14.5, 57.5,
+    1, 65,
+    -4.5, 64,
+    -4, 69,
+    -25, 76,
+    -12, 79,
+    -15, 87,
+    -12, 95,
+    -32, 100,
+    -49, 100,
+    -75.5, 75.5,
+    -77, 68,
+    -123, 46,
+    -123, 41,
+    -110.5, 36,
+    -110, 27,
+    -103, 24,
+    -105, 22,
+    -105, 16,
+    -96, 10,
+    -85, 9,
+    -97.5, 2.5
+  ]
+}

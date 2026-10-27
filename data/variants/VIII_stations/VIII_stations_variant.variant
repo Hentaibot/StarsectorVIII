@@ -1,0 +1,47 @@
+{
+  "variantId": "VIII_stations_variant",
+  "hullId": "VIII_stations",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 50,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "VIII_XLretreating"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "WS0008": "VIII_module_hangar_L_variant"
+    },
+    {
+      "WS0009": "VIII_module_hangar_R_variant"
+    },
+    {
+      "WS0007": "VIII_module_attack2_variant"
+    },
+    {
+      "WS0006": "VIII_module_attack1_variant"
+    },
+    {
+      "WS0002": "VIII_module_hangar_L1_variant"
+    },
+    {
+      "WS0004": "VIII_module_hangar_L2_variant"
+    },
+    {
+      "WS0003": "VIII_module_hangar_R1_variant"
+    },
+    {
+      "WS0005": "VIII_module_hangar_R2_variant"
+    }
+  ],
+  "wings": []
+}

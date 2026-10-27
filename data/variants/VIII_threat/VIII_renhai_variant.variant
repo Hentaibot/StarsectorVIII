@@ -1,0 +1,30 @@
+{
+  "variantId": "VIII_renhai_variant",
+  "hullId": "VIII_renhai",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 1,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "VIII_seeker_fragment",
+        "WS0002": "VIII_seeker_fragment",
+        "WS0003": "VIII_riftcascade",
+        "WS0004": "VIII_kinetic_fragments",
+        "WS0005": "VIII_kinetic_fragments",
+        "WS0006": "VIII_devouring_swarm",
+        "WS0007": "VIII_devouring_swarm",
+        "WS0010": "VIII_heavyblaster",
+        "WS0011": "VIII_heavyblaster"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

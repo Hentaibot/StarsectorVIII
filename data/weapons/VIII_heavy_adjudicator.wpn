@@ -1,0 +1,27 @@
+{
+	"id":"VIII_heavy_adjudicator",  # this id must match what's in the spreadsheet
+	"specClass":"projectile",
+	"type":"BALLISTIC",
+	"size":"LARGE",
+	"turretSprite":"",
+	"turretGlowSprite":"",
+	"hardpointSprite":"",
+	"hardpointGlowSprite":"",
+	"turretOffsets":[0, 0],
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[0, 0],
+	"hardpointAngleOffsets":[0],
+	"barrelMode":"ALTERNATING", # LINKED or ALTERNATING.  whether barrels fire at the same time or alternate.
+	"animationType":"NONE",  # NONE, GLOW, MUZZLE_FLASH, SMOKE
+	"muzzleFlashSpec":{"length":75.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":15,
+					   "particleSizeMin":12.0,
+					   "particleSizeRange":22.0,
+					   "particleDuration":0.67,
+					   "particleCount":60,
+					   "particleColor":[52, 93, 255,255]},
+					   #"particleColor":[255,195,100,75]},
+	"projectileSpecId":"VIII_heavy_adjudicator_shot",  # projectile that will be fired
+	"fireSoundTwo":"heavy_adjudicator_fire",
+	"stopPreviousFireSound":true,	
+}

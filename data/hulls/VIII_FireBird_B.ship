@@ -1,0 +1,198 @@
+{
+  "hullName": "VIII_firebird_b",
+  "hullId": "VIII_firebird_b",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/VIII/ships/phase/VIII_firebird_B.png",
+  "style": "HIGH_TECH",
+  "height": 162,
+  "width": 144,
+  "center": [72, 81],
+  "collisionRadius": 97,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 83,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0007": "VIII_microarray",
+    "WS0008": "VIII_microarray"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": -0,
+      "locations": [4, 56]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": 0,
+      "locations": [4, -56]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": -0,
+      "locations": [12, -25]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [12, 25]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": -0,
+      "locations": [52, 10.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": 0,
+      "locations": [52, -10.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 20,
+      "locations": [28.5, 20.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -20,
+      "locations": [28.5, -20.5]
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -41,
+      "locations": [21.5, -26]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 41,
+      "locations": [21.5, 26]
+    },
+    {
+      "id": "WS0011",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -55.5,
+      "locations": [14.5, -31.5]
+    },
+    {
+      "id": "WS0012",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 55.5,
+      "locations": [14.5, 31.5]
+    },
+    {
+      "id": "WS0013",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -70,
+      "locations": [7.5, -37]
+    },
+    {
+      "id": "WS0014",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 70,
+      "locations": [7.5, 37]
+    },
+    {
+      "id": "WS0015",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -120,
+      "locations": [-20, -40]
+    },
+    {
+      "id": "WS0016",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 120,
+      "locations": [-20, 40]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-41.5, 26],
+      "length": 69.5,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-41.5, -26],
+      "length": 69.5,
+      "width": 17,
+      "angle": -180,
+      "contrailSize": 17,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -78.5, -6,
+    -52.5, -14.5,
+    -50, -29.5,
+    -6, -70,
+    9, -47,
+    56, -12,
+    77, -3,
+    77, 3,
+    56, 12,
+    9, 47,
+    -6, 70,
+    -50, 29.5,
+    -52.5, 14.5,
+    -78.5, 6
+  ]
+}

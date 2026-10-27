@@ -1,0 +1,35 @@
+{
+    "displayName": "ATK",
+    "fluxCapacitors": 3,
+    "fluxVents": 0,
+	"goalVariant": true,
+    "hullId": "VIII_blizzard",
+    "hullMods": [
+        "targetingunit",
+        "auxiliarythrusters",
+        "advancedshieldemitter",
+        "hardenedshieldemitter",
+        "fluxbreakers"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "VIII_blizzard_ATK",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "VIII_voidblaster"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "VIII_devouring_swarm"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "VIII_heavyburst"}
+        }
+    ],
+    "wings": []
+}

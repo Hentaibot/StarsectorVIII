@@ -1,0 +1,56 @@
+{
+    "displayName": "ATK",
+    "fluxCapacitors": 10,
+    "fluxVents": 25,
+    "goalVariant": true,
+    "hullId": "VIII_musketeer",
+    "hullMods": [
+        "targetingunit",
+        "fluxdistributor",
+        "fluxcoil"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "VIII_musketeer_ATK",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "VIII_tachyonlance",
+                "WS0002": "VIII_tachyonlance"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0010": "VIII_kinetic_fragments",
+                "WS0011": "VIII_kinetic_fragments"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "VIII_vulcan",
+                "WS0007": "VIII_vulcan",
+                "WS0008": "VIII_vulcan",
+                "WS0009": "VIII_vulcan"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "VIII_pdburst",
+                "WS0005": "VIII_pdburst"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "VIII_swarm_launcher"}
+        }
+    ]
+}

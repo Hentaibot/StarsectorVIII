@@ -1,0 +1,22 @@
+{
+    "displayName": "1",
+    "fluxCapacitors": 0,
+    "fluxVents": 0,
+    "goalVariant": true,
+    "hullId": "shrouded_vortex",
+    "hullMods": ["VIII_Recover",
+		"shrouded_thunderhead",
+		"shrouded_lens"],
+    "permaMods": [
+		"VIII_Recover",
+		"axialrotation",
+		"shrouded_thunderhead",
+		"shrouded_lens"
+	],
+    "sMods": ["VIII_Recover",
+		"shrouded_thunderhead",
+		"shrouded_lens"],
+    "variantId": "VIII_shrouded_darklight_core",
+    "weaponGroups": [
+    ]
+}

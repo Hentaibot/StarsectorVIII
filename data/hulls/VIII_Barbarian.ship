@@ -1,0 +1,92 @@
+{
+  "hullName": "VIII_barbarian",
+  "hullId": "VIII_barbarian",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/VIII/ships/VIII_Barbarian.png",
+  "style": "HIGH_TECH",
+  "height": 68,
+  "width": 112,
+  "center": [56, 34],
+  "collisionRadius": 76,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 59,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [17.5, 22]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [17.5, -22]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [2.5, 46.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [2.5, -46.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-23, 22],
+      "length": 68.5,
+      "width": 25,
+      "angle": 180,
+      "contrailSize": 25,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-23, -22],
+      "length": 68.5,
+      "width": 25,
+      "angle": -180,
+      "contrailSize": 25,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    15, -12,
+    32.5, -12.5,
+    32.5, -32,
+    18.5, -32,
+    12.5, -53.5,
+    -5, -55,
+    -24.5, -36,
+    -20, -8,
+    -30, -2.5,
+    -30, 2.5,
+    -20, 8,
+    -24.5, 36,
+    -5, 55,
+    12.5, 53.5,
+    18.5, 32,
+    32.5, 32,
+    32.5, 12.5,
+    15, 12,
+    23, 4.5,
+    23, -4.5
+  ]
+}

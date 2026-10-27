@@ -1,0 +1,12 @@
+{
+	"starts":[
+		{
+			"id":"VIII_Starts",
+			"name":"旗舰开局",
+			"difficulty":"非常简单",
+			"desc":"使用第八战斗群的旗舰殴打整个英仙座.",
+			"className":"data.scripts.campaign.customstart.VIII_Starts",
+			"factionId":"player"
+		}
+	]
+}

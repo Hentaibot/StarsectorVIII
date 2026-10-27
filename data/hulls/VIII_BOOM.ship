@@ -1,0 +1,31 @@
+{
+  "bounds": [65,-0.5,27,25,1,33,-4,25.5,-23.5,23,-41,41.5,-61.5,36.5,-60.5,23,-48,19,-63.5,10,-64,-11,-48,-20.5,-60.5,-21,-63.5,-35.5,-43,-39.5,-23.5,-23.5,-4,-25,0,-31.5,27,-25],
+  "builtInMods": ["VIII_BoomAIHullmod"],
+  "builtInWeapons": {},
+  "builtInWings": [],
+  "center": [
+    41.5,
+    65
+  ],
+  "collisionRadius": 80,
+  "coversColor": "",
+  "engineSlots": [{"angle":180,"contrailSize":12,"length":43,"location":[-65,-0.5],"style":"HIGH_TECH","width":19},{"angle":180,"contrailSize":12,"length":17,"location":[-65,7.5],"style":"HIGH_TECH","width":8},{"angle":180,"contrailSize":12,"length":16,"location":[-65,-9.5],"style":"HIGH_TECH","width":8},{"angle":180,"contrailSize":12,"length":16,"location":[-62,31.5],"style":"HIGH_TECH","width":8},{"angle":180,"contrailSize":12,"length":16,"location":[-64,-33],"style":"HIGH_TECH","width":8}],
+  "height": 130,
+  "hullId": "VIII_BOOM",
+  "hullName": "VIII_BOOM",
+  "hullSize": "FRIGATE",
+  "moduleAnchor": [
+    0,
+    0
+  ],
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 74,
+  "spriteName": "graphics/VIII/ships/VIII_BOOM.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [],
+  "width": 83
+}

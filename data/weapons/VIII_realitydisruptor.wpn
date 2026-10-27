@@ -1,0 +1,28 @@
+{
+	"id":"VIII_realitydisruptor",
+	"specClass":"projectile",
+	"everyFrameEffect":"com.fs.starfarer.api.impl.combat.RealityDisruptorEffect",
+	"type":"ENERGY",
+	"mountTypeOverride":"SYNERGY",
+	"size":"LARGE",
+	"turretSprite":"graphics/VIII/weapons/VIII_reality_disruptor_turret_base.png",
+	"turretGlowSprite":"graphics/VIII/weapons/VIII_reality_disruptor_turret_glow.png",
+	"hardpointSprite":"graphics/VIII/weapons/VIII_reality_disruptor_turret_glow.png",
+	"hardpointGlowSprite":"graphics/VIII/weapons/VIII_reality_disruptor_turret_glow.png",		
+	"hardpointOffsets":[40, 0],
+	"turretOffsets":[30, 0],
+	"hardpointAngleOffsets":[0],
+	"turretAngleOffsets":[0],
+	"unaffectedByProjectileSpeedBonuses":true,
+	"glowColor":[255,50,50,255], # used for emp arcs as well
+	#"glowColor":[25,100,155,255],
+	"barrelMode":"ALTERNATING",
+	#"renderHints":[RENDER_LOADED_MISSILES],
+	"interruptibleBurst":false,
+	"animationType":"GLOW",
+	"autocharge":true,
+	"projectileSpecId":"realitydisruptor_shot",
+	"fireSoundTwo":"realitydisruptor_fire",
+}
+
+

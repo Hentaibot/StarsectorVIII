@@ -1,0 +1,212 @@
+{
+  "hullName": "VIII_penelope",
+  "hullId": "VIII_Penelope",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/VIII/ships/VIII_Penelope.png",
+  "style": "HIGH_TECH",
+  "height": 244,
+  "width": 254,
+  "center": [127, 122],
+  "collisionRadius": 190,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 150.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "advancedoptics",
+    "automated"
+  ],
+  "builtInWeapons": {
+    "WS0011": "rift_lightning"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 300,
+      "angle": 0,
+      "locations": [-24.5, 54.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 305,
+      "angle": -0,
+      "locations": [-24.5, -54.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [25, -55]
+    },
+    {
+      "id": "WS0004",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [25, 55]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 50,
+      "locations": [-71, 29]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": -50,
+      "locations": [-71, -28.5]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 45,
+      "locations": [-50, 90]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": -45,
+      "locations": [-50, -89]
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [-42.5, -115]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [-42.5, 115]
+    },
+    {
+      "id": "WS0011",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": 0,
+      "locations": [93, 0.5]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 301,
+      "angle": -45,
+      "locations": [29, -78.5]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 301,
+      "angle": 45,
+      "locations": [29, 78.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-113.5, -0.5],
+      "length": 128,
+      "width": 39,
+      "angle": 180,
+      "contrailSize": 39,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-99.5, 31.5],
+      "length": 93,
+      "width": 27,
+      "angle": 180,
+      "contrailSize": 27,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-99.5, -31.5],
+      "length": 93,
+      "width": 27,
+      "angle": -180,
+      "contrailSize": 27,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-91, 58.5],
+      "length": 87,
+      "width": 25,
+      "angle": 180,
+      "contrailSize": 25,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-91, -58.5],
+      "length": 87,
+      "width": 25,
+      "angle": -180,
+      "contrailSize": 25,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    96.5, -5.5,
+    124.5, -11.5,
+    102.5, -26.5,
+    46, -37.5,
+    48, -70.5,
+    79.5, -71.5,
+    50, -86.5,
+    -26.5, -101.5,
+    -32.5, -122,
+    -52.5, -122.5,
+    -117.5, -70.5,
+    -91, -61.5,
+    -102, -20,
+    -115.5, -12.5,
+    -115.5, 12.5,
+    -102, 20,
+    -91, 61.5,
+    -117.5, 70.5,
+    -52.5, 122.5,
+    -32.5, 122,
+    -26.5, 101.5,
+    50, 86.5,
+    79.5, 71.5,
+    48, 70.5,
+    46, 37.5,
+    102.5, 26.5,
+    124.5, 11.5,
+    96.5, 5.5
+  ]
+}

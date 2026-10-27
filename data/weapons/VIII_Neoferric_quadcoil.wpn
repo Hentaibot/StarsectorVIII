@@ -1,0 +1,64 @@
+{
+  "id": "VIII_neoferric_quadcoil",
+  "specClass": "projectile",
+  "projectileSpecId": "neoferric_quadcoil_shot",
+  "type": "BALLISTIC",
+  "size": "LARGE",
+  "turretSprite": "graphics/VIII/weapons/VIII_quadcoil_turret_base.png",
+  "turretGunSprite": "graphics/VIII/weapons/VIII_quadcoil_turret_recoil.png",
+  "turretGlowSprite":"graphics/VIII/weapons/VIII_quadcoil_turret_glow.png",
+  "hardpointSprite": "graphics/VIII/weapons/VIII_quadcoil_turret_base.png",
+  "hardpointGunSprite": "graphics/VIII/weapons/VIII_quadcoil_turret_recoil.png",
+  "hardpointGlowSprite":"graphics/VIII/weapons/VIII_quadcoil_turret_glow.png",	
+  "glowColor":[80,155,255,200], #255
+  "visualRecoil": -14,
+  "turretOffsets": [
+    33,
+    -10,
+    33,
+    -4,
+    33,
+    4,
+    33,
+    10
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    48,
+    -9,
+    48,
+    -3,
+    48,
+    3,
+    48,
+    9
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW_AND_FLASH",
+  "muzzleFlashSpec": {
+    "length": 70,
+    "spread": 2,
+    "particleSizeMin": 8,
+    "particleSizeRange": 14,
+    "particleDuration": 0.15,
+    "particleCount": 24,
+    "particleColor": [
+      235,
+      255,
+      105,
+      255
+    ]
+  },
+  "fireSoundTwo": "neoferric_quadcoil_fire"
+}

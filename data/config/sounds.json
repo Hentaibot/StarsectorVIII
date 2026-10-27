@@ -1,0 +1,38 @@
+{
+	"music":{
+	},
+	"VIII_club_HE_boom":{
+		"sounds":[
+        	{"file":"sounds/weapons/VIII_club_HE_boom1.ogg","pitch":1.0,"volume":1},
+			{"file":"sounds/weapons/VIII_club_HE_boom2.ogg","pitch":1.0,"volume":1},
+			{"file":"sounds/weapons/VIII_club_HE_boom3.ogg","pitch":1.0,"volume":1}
+        ]
+	},
+	"VIII_club_HE_fire":{
+		"sounds":[
+        	{"file":"sounds/weapons/VIII_club_HE_fire1.ogg","pitch":1.0,"volume":1},
+			{"file":"sounds/weapons/VIII_club_HE_fire2.ogg","pitch":1.0,"volume":1},
+			{"file":"sounds/weapons/VIII_club_HE_fire3.ogg","pitch":1.0,"volume":1},
+			{"file":"sounds/weapons/VIII_club_HE_fire4.ogg","pitch":1.0,"volume":1}
+        ]
+	},
+	"VIII_club_AP_fire":{
+		"sounds":[
+        	{"file":"sounds/weapons/VIII_club_AP_fire1.ogg","pitch":1.0,"volume":1},
+			{"file":"sounds/weapons/VIII_club_AP_fire2.ogg","pitch":1.0,"volume":1},
+			{"file":"sounds/weapons/VIII_club_AP_fire3.ogg","pitch":1.0,"volume":1},
+			{"file":"sounds/weapons/VIII_club_AP_fire4.ogg","pitch":1.0,"volume":1},
+			{"file":"sounds/weapons/VIII_club_AP_fire5.ogg","pitch":1.0,"volume":1},
+			{"file":"sounds/weapons/VIII_club_AP_fire6.ogg","pitch":1.0,"volume":1}
+        ]
+	}
+}
+
+
+
+
+
+
+
+
+
