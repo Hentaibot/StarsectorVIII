@@ -1,0 +1,21 @@
+{
+	"id":"VIII_eclipse_manifold",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.VIII_EclipseManifoldAI",
+	"statsScript":"data.scripts.shipsystems.VIII_EclipseManifold",
+
+	"soundFilterType":"LOWPASS",
+	"soundFilterGain":0.8,
+	"soundFilterGainHF":0.6,
+
+	"useSound":"system_temporalshell",
+	"loopSound":"system_temporalshell_loop",
+	"deactivateSound":"system_temporalshell_off",
+
+	"aiHints":{
+		"activeSpeedIncrease":0,
+		"burstMovementPotential":0,
+		"averageSpeedMult":1.0
+	}
+}

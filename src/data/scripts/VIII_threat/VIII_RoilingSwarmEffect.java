@@ -414,6 +414,14 @@ public class VIII_RoilingSwarmEffect extends BaseCombatLayeredRenderingPlugin {
 	public Object custom2;   // 自定义数据槽2
 	public Object custom3;   // 自定义数据槽3
 
+	/**
+	 * 时流倍率：整体缩放每帧更新量（飞行、摩擦、重生、闪烁、交换等）。
+	 * 默认 1（正常时间流速）；由外部（如「分流发生器」子系统）临时提高，
+	 * 用来表现碎片集群获得时流加速。非 ShipAPI 的特效没有 stats.timeMult，
+	 * 所以只能在这里手动缩放。
+	 */
+	public float timeMult = 1f;
+
 	// ==================== 构造函数 ====================
 
 	/**
@@ -687,6 +695,11 @@ public class VIII_RoilingSwarmEffect extends BaseCombatLayeredRenderingPlugin {
 
 		// 战斗暂停、实体无效或已过期则跳过
 		if (Global.getCombatEngine().isPaused() || entity == null || isExpired()) return;
+
+		// 时流倍率（默认 1）：整体缩放本帧更新量，供分流发生器等外部提速使用
+		if (timeMult != 1f) {
+			amount *= timeMult;
+		}
 
 		// 初始生成成员（仅执行一次）
 		if (!spawnedInitial && params.withInitialMembers) {

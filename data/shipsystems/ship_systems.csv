@@ -18,3 +18,4 @@ name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u 
 油罐自爆,VIII_oil_selfdestruct,,,,,,,,1,,5,1,0.2,0,,,,,,,,,,,,hide_in_codex,graphics/icons/hullsys/high_energy_focus.png
 时流之壳·改,VIII_normandy_temporalshell,1,,,,,0.25,,,,4,10,2,10,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
 爆破自爆,VIII_boom_selfdestruct,,,,,,,,1,,5,1,0.2,0,,,,,,,,,,,,hide_in_codex,graphics/icons/hullsys/high_energy_focus.png
+分流发生器,VIII_eclipse_manifold,,,,,,,,,,5,20,10,30,,,,,,,,,,,,defensive,graphics/icons/hullsys/temporal_shell.png
