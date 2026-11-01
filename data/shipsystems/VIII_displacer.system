@@ -1,7 +1,8 @@
 {
 	"id":"VIII_displacer",
 	"type":"DISPLACER",
-	"aiType":"PHASE_DISPLACER",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.VIII_DisplacerAI",
 	
 	"statsScript":"data.scripts.shipsystems.VIII_displacer",
 	

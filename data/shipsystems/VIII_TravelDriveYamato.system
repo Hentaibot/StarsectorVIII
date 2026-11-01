@@ -2,7 +2,8 @@
 	"id":"VIII_TravelDriveYamato",
 	"type":"ENGINE_MOD",
 
-	"aiType":"BURN_DRIVE_TOGGLE",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.VIII_TravelDriveYamatoAI",
 
 	#"aiType":"CUSTOM",
 	#"aiScript":"data.shipsystems.scripts.ai.Moci_TravelDriveYamatoAI",

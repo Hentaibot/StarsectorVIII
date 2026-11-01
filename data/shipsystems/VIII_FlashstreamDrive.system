@@ -1,7 +1,8 @@
 {
 	"id":"VIII_FlashstreamDrive",
 	"type":"STAT_MOD",
-	"aiType":"TEMPORAL_SHELL",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.VIII_FlashstreamDriveAI",
 	
 	"statsScript":"data.scripts.shipsystems.VIII_FlashstreamDrive",
 	

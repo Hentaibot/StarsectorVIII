@@ -1,7 +1,8 @@
 {
 	"id":"VIII_lidararray",
 	"type":"STAT_MOD",
-	"aiType":"LIDAR_ARRAY",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.VIII_LidarArrayAI",
 	
 	"statsScript":"data.scripts.shipsystems.VIII_LidarArrayStats",
 
