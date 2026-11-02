@@ -1,19 +1,63 @@
 {
+	# ===== ① 身份：弹体唯一标识，建议与文件名 VIII_XLretreating_shot.proj 保持一致 =====
 	"id":"VIII_XLretreating_shot",
+
+	# specClass 决定引擎用哪个规格类实例化：
+	#   "projectile" = 普通炮弹（直线飞行，无引擎、无追踪，engineSpec 会被忽略）
+	#   "missile"    = 导弹（有引擎、可追踪，支持 flameout / armingTime 等全套字段）
 	"specClass":"missile",
-	"missileType":"ROCKET",
+
+	# 弹种类别，影响 AI 威胁评估、点防武器优先级、flare 诱饵引诱能力，
+	# 以及部分系统/技能对"导弹"的伤害加成判定。
+	# 常见取值：MISSILE / ROCKET / TORPEDO / BOMB / MINE（以游戏内 MissileType 枚举为准）
+	"missileType":"MISSILE",
+
+	# ===== ② 命中逻辑：唯一执行业务代码的地方 =====
+	# 碰撞命中时调用的 OnHitEffectPlugin 实现类（全限定名）。
+	# 注意是"包.外部类.内部类"形式：该内部类必须是 public static class 且有public无参构造，
+	# 否则反射实例化会失败，弹体命中即报错。
 	"onHitEffect":"data.scripts.weapons.VIII_XLretreating.VIII_GravityCannonEffect",
+
+	# ===== ③ 外观：本弹体刻意做成完全隐形 =====
+	# 贴图路径；此处为空字符串 = 不绘制任何贴图，弹体在战场上不可见
 	#"sprite":"graphics/missiles/shell_gauss_cannon.png",
 	"sprite":"",
-	"size":[10,14],	
+
+	# 贴图宽高（像素）
+	"size":[10,14],
+	# 绘制中心相对弹体坐标的偏移，习惯上取 size 的一半
 	"center":[5,7],
+
+	# ===== ④ 碰撞判定 =====
+	# 碰撞判定半径（像素）。相对 10x14 的贴图明显偏大，但本文件里 collisionClass 为 NONE，
+	# 所以该半径实际不参与任何碰撞
 	"collisionRadius":30,
+
+	# 碰撞层：NONE = 不与任何东西碰撞（穿透舰船、小行星，也不会被点防子弹击落）。
+	# 注意：那样 onHitEffect 也就几乎不会被触发，详见文件末尾的说明。
+	# 其他常见取值：HITS_SHIPS_AND_ASTEROIDS（只撞舰船与小行星，因此不会被点防拦截）、HITS_ALL（全交互，会被拦截）
 	"collisionClass":"NONE",
-	"explosionColor":[100,100,255,255],  # purely visual, will get a white additively blended core on top of this color
-	"explosionRadius":250, # purely visual
-#	"explosionSpec":{"duration":0.1f, # not visual
+
+	# ===== ⑤ 爆炸表现（纯视觉，不产生任何伤害） =====
+	# 爆炸颜色 RGBA（0-255）。纯视觉效果，系统会在该颜色之上叠加一层加法混合的白色亮核
+	"explosionColor":[100,100,255,255],
+	# 爆炸视觉半径。注意：纯视觉效果，与伤害无关
+	"explosionRadius":250,
+
+	# ===== ⑥ 爆炸伤害（整段被注释，因此本弹体没有范围伤害） =====
+	# explosionSpec 才是真正产生伤害的爆炸配置：
+	#   duration            爆炸持续时间（非视觉参数）
+	#   radius              伤害半径
+	#   coreRadius          核心半径，此半径内为满伤害，之外按距离衰减
+	#   collisionClass      对舰船/小行星的碰撞层
+	#   collisionClassByFighter 对战机的碰撞层
+	#   particleSizeMin / particleSizeRange / particleDuration / particleCount / particleColor
+	#                       爆炸粒子表现
+	# 提示：若启用，建议让 explosionRadius（视觉）不超过 radius（伤害半径），
+	#       否则玩家会看到"球很大却只有内圈掉血"。
+#	"explosionSpec":{"duration":0.1f, # not visual（非视觉参数）
 #					 "radius":175,
-#					 "coreRadius":75, # full damage within core radius
+#					 "coreRadius":75, # full damage within core radius（核心半径内为满伤害）
 #					 "collisionClass":HITS_SHIPS_AND_ASTEROIDS,
 #					 "collisionClassByFighter":HITS_SHIPS_AND_ASTEROIDS,
 #					 "particleSizeMin":5.0,
@@ -21,47 +65,72 @@
 #					 "particleDuration":1,
 #					 "particleCount":0,
 #					 "particleColor":[255,155,155,255]},
+
+	# ===== ⑦ 飞行姿态与目标提示 =====
+	# 持续加速：为 true 时弹体一直加速、不滑行；注释后改为"到达速度后巡航"，手感更稳
 	#"alwaysAccelerate":true,
+
+	# 淡出期间伤害衰减，避免弹体消失瞬间仍造成满额伤害
 	#"reduceDamageWhileFading":true,
+
+	# 用弹体自身飞行距离计算可飞范围（而不是只依赖武器射程）
 	#"useProjectileRangeCalculation":true,
-	"renderTargetIndicator":false, # no target diamond in combat view, not targeted by flares
+
+	# 目标指示：false = 战斗中不显示目标菱形，且不会被 flare（照明弹）诱饵锁定
+	"renderTargetIndicator":false,
+
+	# 淡出阶段关闭碰撞，避免"消失瞬间还蹭到目标"
 	"noCollisionWhileFading":true,
-	"useHitGlowWhenDealingDamage":false, # ? look at this
-	"useHitGlowWhenDestroyed":true, # instead of the default explosion
+
+	# 造成伤害时是否播放命中白光。作者原注存疑，暂关
+	"useHitGlowWhenDealingDamage":false,
+
+	# 被摧毁时用命中白光效果取代默认爆炸（这是本弹体唯一的可见瞬间）
+	"useHitGlowWhenDestroyed":true,
+
+	# 熄火（燃料耗尽）时变成哑弹（不引爆）的概率，0 = 永远不会哑火
 	"dudProbabilityOnFlameout":0,
-	"fizzleOnReachingWeaponRange":true,					 
+
+
+	# 解除保险所需时间（秒），0 = 出生立即武装，可以马上命中
 	"armingTime":0,
-	"flameoutTime":0.5, # total time from flameout to full fadeout
-	"noEngineGlowTime":0.5, # time spent without the engine glow being rendered
-	"fadeTime":0.5, # fadeout duration			
-	"glowColor":[50,50,255,127],
-	#"glowRadius":125,
-	"glowRadius":0,
+
+	# 从熄火到完全淡出的总时长（秒）
+	"flameoutTime":0.5,
+
+	# 熄火期间不渲染引擎光晕的时长（秒）
+	"noEngineGlowTime":0.5,
+
+	# 淡出动画时长（秒）
+	"fadeTime":0.5,
+
+	"glowColor":[19,30,255,125],
+	"glowRadius":125,
+
 	"engineSpec":{"turnAcc":500,
 				  "turnRate":100,
-				  "acc":300,
-				  "dec":300},
-#	"engineSlots":[{"id":"ES1",
-#					#"loc":[-7, 0],
-#					"loc":[0, 0],
-#				    "style":"CUSTOM",
-#					"styleSpec":{
-#						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
-#						"engineColor":[255,100,100,0],
-#						"glowSizeMult":2.5,
-#						"glowAlternateColor":[255,0,0,255],
-#						"contrailDuration":2,
-#						"contrailWidthMult":1.5,
-#						"contrailWidthAddedFractionAtEnd":1,  # can be negative. makes trail spread out/narrow at the end
-#						"contrailMinSeg":5, # min segment length, in pixels
-#						"contrailMaxSpeedMult":0f,
-#						"contrailAngularVelocityMult":0.5f,
-#						"contrailSpawnDistMult":0f, # how far away from engine it starts
-#						"contrailColor":[255,100,100,50],
-#						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
-#					},
-#				    "width":10.0,
-#				    "length":50.0,
-#				    "angle":180.0}],
+				  "acc":500,
+				  "dec":500},
+	"engineSlots":[{"id":"ES1",
+					#"loc":[-7, 0],
+					"loc":[0, 0],
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
+						"engineColor":[19,30,255,0],
+						"glowSizeMult":2.5,
+						"glowAlternateColor":[124,130,255,255],
+						"contrailDuration":2,
+						"contrailWidthMult":1.5,
+						"contrailWidthAddedFractionAtEnd":1,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":5, # min segment length, in pixels
+						"contrailMaxSpeedMult":0f,
+						"contrailAngularVelocityMult":0.5f,
+						"contrailSpawnDistMult":0f, # how far away from engine it starts
+						"contrailColor":[93,165,255,50],
+						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
+					},
+				    "width":10.0,
+				    "length":50.0,
+				    "angle":180.0}],
 }
-			

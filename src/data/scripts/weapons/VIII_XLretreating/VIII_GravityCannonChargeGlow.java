@@ -88,15 +88,15 @@ public class VIII_GravityCannonChargeGlow extends BaseCombatLayeredRenderingPlug
     private static final int ACCRETION_TRAIL_COUNT_MAX = 3;      // 最大光线数/帧
 
     // 距离范围（基于黑洞半径的倍数）
-    private static final float ACCRETION_DISTANCE_MIN_MULT = 20.0f;  // 最小距离半径
-    private static final float ACCRETION_DISTANCE_MAX_MULT = 2.0f;  // 最大距离半径
+    private static final float ACCRETION_DISTANCE_MIN_MULT = 5f;  // 最小距离半径
+    private static final float ACCRETION_DISTANCE_MAX_MULT = 20f;  // 最大距离半径
 
     // === 引力效果参数 ===
-    private static final float DAMAGE_INTERVAL = 0.1F;  // 伤害应用间隔（秒）
+    private static final float DAMAGE_INTERVAL = 0.05F;  // 伤害应用间隔（秒）
     private static final float EFFECT_RANGE = 600F; // 效果范围（用于扭曲效果计算）
 
     // 引力作用半径计算
-    public static final float GRAVITY_RANGE_BASE = 1350f; // 基础作用半径（缩小）
+    public static final float GRAVITY_RANGE_BASE = 1500f; // 基础作用半径（缩小）
     public static final float GRAVITY_RANGE_MASS_MULT = 0.8f; // 质量增长系数（降低）
 
     // 舰船引力强度

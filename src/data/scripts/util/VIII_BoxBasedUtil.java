@@ -169,39 +169,38 @@ public class VIII_BoxBasedUtil {
     public static void addSharpFlare(Vector2f location, float angle, float width, float height,
                                      Color coreColor, Color fringeColor, float in, float full, float out,
                                      float glowPower, float noisePower) {
-        // 创建光晕实体
-        FlareEntity flareEntity = new FlareEntity();
-        flareEntity.setLocation(location);               // 位置
-        flareEntity.setSize(width, height);              // 尺寸
-
-        // 设置朝向缩放，第一个参数为角度，后两个为 x/y 缩放（这里均为 1）
-        flareEntity.setFacingScale(MathUtils.clampAngle(angle), 1f, 1f);
-
-        flareEntity.setCoreColor(coreColor);             // 核心颜色
-        flareEntity.setFringeColor(fringeColor);         // 边缘颜色
-        flareEntity.setAdditiveBlend();                  // 使用加法混合
-
-        flareEntity.setSmoothDisc();                     // 平滑圆盘
-        flareEntity.autoAspect();                        // 自动宽高比
-        flareEntity.setNoisePower(noisePower);           // 噪点强度
-        flareEntity.setGlowPower(glowPower);             // 辉光强度
-        flareEntity.setGlobalTimer(in, full, out);       // 设置淡入、全亮、淡出时间
-
-        // 设置渲染图层（粒子层上方稍低处）
-        flareEntity.setLayer(CombatEngineLayers.ABOVE_PARTICLES_LOWER);
-
-        // 将光晕实体添加到战斗渲染管理器中
-        CombatRenderingManager.addEntity(flareEntity);
+        // 一次性光斑：创建后直接交给渲染管理器，不保留引用
+        CombatRenderingManager.addEntity(createSharpFlare(location, angle, width, height,
+                coreColor, fringeColor, in, full, out, glowPower, noisePower));
     }
 
-    public static void addSharpFlare_noFlick(Vector2f location, float angle, float width, float height,
+    /**
+     * 创建一个「锐利光晕」实体，但**不**加入渲染队列，返回实体引用。
+     * <p>
+     * 与 {@link #addSharpFlare} 的唯一区别是：本方法把 {@code FlareEntity} 返回给调用方，
+     * 调用方可以逐帧 {@code setLocation} / {@code setFacingScale} 让光晕跟随某个移动中的实体，
+     * 结束时用 {@link CombatRenderingManager#removeEntity} 移除。
+     *
+     * @param location    初始位置
+     * @param angle       朝向角度
+     * @param width       光晕宽度
+     * @param height      光晕高度
+     * @param coreColor   核心颜色
+     * @param fringeColor 边缘颜色
+     * @param in          淡入时间
+     * @param full        全亮持续时间
+     * @param out         淡出时间
+     * @param glowPower   辉光强度
+     * @param noisePower  噪点强度
+     * @return 尚未加入渲染队列的光晕实体
+     */
+    public static FlareEntity createSharpFlare(Vector2f location, float angle, float width, float height,
                                      Color coreColor, Color fringeColor, float in, float full, float out,
                                      float glowPower, float noisePower) {
         // 创建光晕实体
         FlareEntity flareEntity = new FlareEntity();
         flareEntity.setLocation(location);               // 位置
         flareEntity.setSize(width, height);              // 尺寸
-        flareEntity.setFlick(false);                     // 不启用闪烁
 
         // 设置朝向缩放，第一个参数为角度，后两个为 x/y 缩放（这里均为 1）
         flareEntity.setFacingScale(MathUtils.clampAngle(angle), 1f, 1f);
@@ -218,6 +217,16 @@ public class VIII_BoxBasedUtil {
 
         // 设置渲染图层（粒子层上方稍低处）
         flareEntity.setLayer(CombatEngineLayers.ABOVE_PARTICLES_LOWER);
+
+        return flareEntity;
+    }
+
+    public static void addSharpFlare_noFlick(Vector2f location, float angle, float width, float height,
+                                     Color coreColor, Color fringeColor, float in, float full, float out,
+                                     float glowPower, float noisePower) {
+        FlareEntity flareEntity = createSharpFlare(location, angle, width, height,
+                coreColor, fringeColor, in, full, out, glowPower, noisePower);
+        flareEntity.setFlick(false);                     // 不启用闪烁
 
         // 将光晕实体添加到战斗渲染管理器中
         CombatRenderingManager.addEntity(flareEntity);
