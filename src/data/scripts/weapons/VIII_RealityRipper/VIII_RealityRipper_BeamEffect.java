@@ -113,6 +113,9 @@ public class VIII_RealityRipper_BeamEffect implements BeamEffectPlugin {
                 NegativeExplosionVisual.NEParams p = createStandardRiftParams(70f);
                 RiftCascadeMineExplosion.spawnStandardRift(explosion, p);
 
+                // ----- 黑洞贴图特效：使用 VIII_blackhole2，持续命中时不断续命 -----
+                VIII_RealityRipper_Blackhole.onBeamHit(engine, beam.getWeapon(), point);
+
                 // ----- 新功能：对爆炸半径内所有敌方舰船施加硬幅能增加 -----
                 applyHardFluxToEnemiesInRadius(engine, source, point);
 

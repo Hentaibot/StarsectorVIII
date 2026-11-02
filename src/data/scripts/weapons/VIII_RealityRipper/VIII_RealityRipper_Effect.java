@@ -1,20 +1,20 @@
 package data.scripts.weapons.VIII_RealityRipper;
 
 import com.fs.starfarer.api.combat.*;
+import data.scripts.util.VIII_BoxBasedUtil;
 import org.boxutil.manager.CombatRenderingManager;
-import org.boxutil.units.standard.attribute.Instance2Data;
 import org.boxutil.units.standard.entity.FlareEntity;
 import org.lwjgl.util.vector.Vector2f;
-import org.lwjgl.util.vector.Vector4f;
 
 import java.awt.Color;
-
-import static org.boxutil.util.RenderingUtil.addCombatFlareField;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * VIII_RealityRipper 武器特效插件。
  * 负责管理武器动画、开火时的光晕效果以及冷却期间的粒子火花。
- * 光晕在武器充能超过80%且不在冷却时出现，并随武器移动。
+ * 光晕在武器充能超过80%且不在冷却时持续生成（内圈白、外圈蓝），并逐帧跟随枪口位置与朝向。
  * 冷却期间的粒子分为两阶段：
  *   - 第一阶段（冷却时间的 20%~100%）：生成粒子 7~10
  *   - 第二阶段（冷却时间的 30%~100%）：生成粒子 1~6
@@ -99,62 +99,48 @@ public class VIII_RealityRipper_Effect implements EveryFrameWeaponEffectPlugin {
     private static final float PARTICLE_BRIGHTNESS = 1f;                // 粒子亮度
     private static final float PARTICLE_DURATION = 1f;                  // 粒子持续时间（秒）
 
+    // ========================= 持续光晕参数 =========================
+    /** 光晕淡入时间（秒） */
+    private static final float FLARE_FADE_IN = 0.15f;
+    /** 光晕保持时间（秒） */
+    private static final float FLARE_FULL = 0.3f;
+    /** 光晕淡出时间（秒） */
+    private static final float FLARE_FADE_OUT = 0.1f;
+    /** 单个光晕总生命周期（秒），到点后主动移除实体 */
+    private static final float FLARE_TOTAL_LIFE = FLARE_FADE_IN + FLARE_FULL + FLARE_FADE_OUT;
+    /** 持续生成的间隔（秒）：每隔这么久生成一组光晕 */
+    private static final float FLARE_SPAWN_INTERVAL = 0.08f;
+    /** 开始生成光晕所需的最低充能等级 */
+    private static final float FLARE_CHARGE_THRESHOLD = 0.8f;
+    /** 场上同时存在的光晕数量上限（兜底，正常不会触发） */
+    private static final int MAX_ACTIVE_FLARES = 18;
+
+    /** 蓝色光晕基础尺寸（世界单位） */
+    private static final float BLUE_FLARE_WIDTH = 3000f;
+    private static final float BLUE_FLARE_HEIGHT = 100f;
+    /**
+     * 正圆小型光晕的直径（世界单位）。
+     * 这个值是留给手动调整的：改大就更明显，改小就更含蓄。
+     */
+    private static final float ROUND_FLARE_SIZE = 250f;
+
+    /** 光晕辉光强度（越大边缘越亮、衰减越远） */
+    private static final float FLARE_GLOW_POWER = 0.3f;
+    /** 光晕噪点强度（0 表示完全光滑） */
+    private static final float FLARE_NOISE_POWER = 0.1f;
+
+    /** 光晕内圈颜色：纯白 */
+    private static final Color FLARE_CORE_COLOR = new Color(255, 255, 255, 255);
+    /** 光晕外圈颜色：蓝色 */
+    private static final Color FLARE_FRINGE_COLOR = new Color(0, 0, 255, 205);
+
     // ========================= 光晕实体引用 =========================
-    // 用于复用光晕实体，避免每帧重复创建
-    private FlareEntity blueFlare = null;    // 蓝色光晕
-    private FlareEntity whiteFlare = null;   // 白色光晕
+    // 持续生成的光晕实体列表，每帧更新位置与朝向
+    private final List<ActiveFlare> activeFlares = new ArrayList<ActiveFlare>();
+    // 距离下一次生成的时间累计
+    private float flareSpawnTimer = 0f;
 
     // ========================= 公共方法 =========================
-
-    /**
-     * 创建单个光晕实体。
-     * 此方法存在已知问题：创建了一个未初始化的 FlareEntity 并添加到渲染管理器，但实际返回的是 addCombatFlareField 生成的实体。
-     * 为保持兼容性暂不修改，但可能导致多余实体。
-     *
-     * @param location    光晕位置（世界坐标）
-     * @param facing      光晕朝向（度）
-     * @param coreColor   核心颜色
-     * @param fringeColor 边缘颜色
-     * @param fadeIn      淡入时间（秒）
-     * @param full        保持时间（秒）
-     * @param fadeOut     淡出时间（秒）
-     * @return 通过 addCombatFlareField 生成的光晕实体
-     */
-    public static FlareEntity createSingleFlare(Vector2f location, float facing,
-                                                Color coreColor, Color fringeColor,
-                                                float fadeIn, float full, float fadeOut) {
-        // 创建一个空的光晕实体（未设置属性）
-        FlareEntity entity = new FlareEntity();
-        // 定义光晕的大小范围（四个分量：最小宽度、最大宽度、最小高度、最大高度）
-        Vector4f sizeRange = new Vector4f(300f, 30f, 256f, 10f);
-
-        // 创建一个实例数据对象（此处未实际使用，可能为预留）
-        Instance2Data data = new Instance2Data();
-        data.setScale(300f, 30f);
-        // 将空实体添加到渲染管理器（可能导致无效实体）
-        CombatRenderingManager.addEntity(entity);
-
-        // 调用 BoxUtil 的工具方法生成光晕场，并返回其中的一个实体
-        return addCombatFlareField(
-                location,                     // 光晕位置
-                1,                            // 数量（单个）
-                facing,                       // 朝向
-                0f,                           // 角度范围（0表示固定朝向）
-                null,                         // 散布范围（无）
-                null,                         // 朝向范围（固定）
-                sizeRange,                    // 大小范围
-                fringeColor,                   // 边缘颜色
-                null,                          // 边缘颜色变化（固定）
-                coreColor,                     // 核心颜色
-                null,                          // 核心颜色变化（固定）
-                true,                          // 启用闪烁
-                false,                         // 非同步闪烁
-                fadeIn, full, fadeOut,          // 生命周期
-                0f,                            // 时间偏移范围
-                true,                          // 加法混合
-                CombatEngineLayers.ABOVE_PARTICLES // 渲染层级
-        ).one; // 返回生成的第一个光晕实体
-    }
 
     /**
      * 每帧调用，更新武器特效。
@@ -173,51 +159,8 @@ public class VIII_RealityRipper_Effect implements EveryFrameWeaponEffectPlugin {
         float totalCooldown = weapon.getCooldown();                 // 总冷却时间
 
         // ==================== 开火光晕处理 ====================
-        // 充能 > 80% 且不在冷却时生成/更新光晕
-        if (chargeLevel > 0.8f && cooldownRemaining <= 0f) {
-            float chargeTime = weapon.getSpec().getChargeTime() * 0.2f; // 充能时间的20%作为淡入时间
-            float burstRemaining = weapon.getBurstFireTimeRemaining(); // 剩余连发时间（保持时间）
-            float fadeOut = totalCooldown * 0.1f;                       // 总冷却时间的10%作为淡出时间
-
-            float shipFacing = 0f;
-            ShipAPI ship = weapon.getShip();
-            if (ship != null) {
-                shipFacing = ship.getFacing() + Facing; // 光晕朝向 = 舰船朝向 + 固定偏移
-            }
-
-            Vector2f weaponLoc = weapon.getLocation();
-
-            // 蓝色光晕（核心）
-            if (blueFlare != null && !blueFlare.hasDelete()) {
-                // 复用已有光晕，更新位置、朝向和缩放
-                blueFlare.setStateVanilla(weaponLoc, shipFacing, new Vector2f(9f, 7f));
-            } else {
-                blueFlare = createSingleFlare(weaponLoc, shipFacing,
-                        new Color(0, 0, 255, 255),   // 核心纯蓝不透明
-                        new Color(0, 0, 255, 128),   // 边缘半透明蓝
-                        chargeTime, burstRemaining, fadeOut);
-                blueFlare.setSmoothDisc();            // 设置为平滑圆盘形状
-                blueFlare.setFlickerSyncCode(1);      // 闪烁同步码
-                blueFlare.setSyncFlick(true);         // 启用同步闪烁
-            }
-
-            // 白色光晕（外层）
-            if (whiteFlare != null && !whiteFlare.hasDelete()) {
-                whiteFlare.setStateVanilla(weaponLoc, shipFacing, new Vector2f(4f, 2f));
-            } else {
-                whiteFlare = createSingleFlare(weaponLoc, shipFacing,
-                        new Color(255, 255, 255, 255), // 核心纯白不透明
-                        new Color(255, 255, 255, 128), // 边缘半透明白
-                        chargeTime, burstRemaining, fadeOut);
-                whiteFlare.setSmoothDisc();
-                whiteFlare.setFlickerSyncCode(1);
-                whiteFlare.setSyncFlick(true);
-            }
-        } else {
-            // 不满足光晕条件时清空引用，光晕将自然淡出并自动删除
-            blueFlare = null;
-            whiteFlare = null;
-        }
+        // 持续生成光晕并持续更新位置与朝向；武器进入冷却后停止生成
+        updateFlares(amount, weapon, chargeLevel, cooldownRemaining);
 
         // ==================== 武器动画帧管理 ====================
         if (cooldownRemaining > 0 && totalCooldown > 0) {
@@ -289,6 +232,109 @@ public class VIII_RealityRipper_Effect implements EveryFrameWeaponEffectPlugin {
                         PARTICLE10_DIST_X, PARTICLE10_DIST_Y,
                         PARTICLE10_VEL_ANGLE_OFFSET);
             }
+        }
+    }
+
+    /**
+     * 持续生成并更新开火光晕。
+     * 每帧把所有仍存活的光晕移动到当前枪口位置，并同步朝向（舰船朝向 + Facing），
+     * 所以光晕始终贴着枪口、并随舰船转向一起转。
+     * 武器进入冷却或充能不足时不再生成新光晕，已有光晕按 0.15 / 0.3 / 0.1 的生命周期自然淡出。
+     *
+     * @param amount            时间增量（秒）
+     * @param weapon            当前武器
+     * @param chargeLevel       当前充能等级
+     * @param cooldownRemaining 剩余冷却时间
+     */
+    private void updateFlares(float amount, WeaponAPI weapon, float chargeLevel, float cooldownRemaining) {
+        ShipAPI ship = weapon.getShip();
+        float facing = (ship == null) ? 0f : ship.getFacing() + Facing;
+        Vector2f location = weapon.getLocation();
+
+        // 先更新所有存活光晕：位置与朝向持续跟随枪口 / 舰船
+        Iterator<ActiveFlare> iter = activeFlares.iterator();
+        while (iter.hasNext()) {
+            ActiveFlare flare = iter.next();
+            flare.age += amount;
+            if (flare.entity == null || flare.entity.hasDelete() || flare.age >= FLARE_TOTAL_LIFE) {
+                // 生命周期结束：主动移除，避免实体在空中累积
+                if (flare.entity != null && !flare.entity.hasDelete()) {
+                    CombatRenderingManager.removeEntity(flare.entity);
+                }
+                iter.remove();
+                continue;
+            }
+            flare.entity.setLocation(location);
+            flare.entity.setFacingScale(facing, 1f, 1f);
+        }
+
+        // 冷却中（或充能不足）不再生成新光晕
+        if (cooldownRemaining > 0f || chargeLevel <= FLARE_CHARGE_THRESHOLD) {
+            flareSpawnTimer = 0f;
+            return;
+        }
+
+        // 持续生成：按固定间隔成组生成（蓝色光晕 + 正圆小光晕）
+        flareSpawnTimer += amount;
+        while (flareSpawnTimer >= FLARE_SPAWN_INTERVAL) {
+            flareSpawnTimer -= FLARE_SPAWN_INTERVAL;
+            spawnFlare(location, facing, randomScale(BLUE_FLARE_WIDTH, BLUE_FLARE_HEIGHT), false);
+            float round = ROUND_FLARE_SIZE * randomMultiplier();
+            spawnFlare(location, facing, new Vector2f(round, round), true);
+        }
+
+        // 兜底：万一底层没有回收，强制丢弃最旧的实体，防止越积越多
+        while (activeFlares.size() > MAX_ACTIVE_FLARES) {
+            ActiveFlare oldest = activeFlares.remove(0);
+            if (oldest.entity != null && !oldest.entity.hasDelete()) {
+                CombatRenderingManager.removeEntity(oldest.entity);
+            }
+        }
+    }
+
+    /**
+     * 生成一个跟着枪口走的光晕实体，并记录到 activeFlares 里参与逐帧更新。
+     * 实体由 {@link VIII_BoxBasedUtil#createSharpFlare} 创建（不自动入队），
+     * 这里手动 addEntity，方便后续逐帧更新位置与朝向、到点后再移除。
+     *
+     * @param location 生成位置（世界坐标）
+     * @param facing   朝向（度）
+     * @param scale    尺寸（世界单位）
+     * @param round    是否强制为正圆
+     */
+    private void spawnFlare(Vector2f location, float facing, Vector2f scale, boolean round) {
+        FlareEntity flare = VIII_BoxBasedUtil.createSharpFlare(location, facing, scale.x, scale.y,
+                FLARE_CORE_COLOR, FLARE_FRINGE_COLOR,
+                FLARE_FADE_IN, FLARE_FULL, FLARE_FADE_OUT,
+                FLARE_GLOW_POWER, FLARE_NOISE_POWER);
+        if (flare == null) return;
+        if (round) {
+            // aspect=1 关掉 autoAspect 的纵向压缩；discRatio=2 把内圈还原成正圆
+            flare.setAspect(1.0f);
+            flare.setDiscRatio(2.0f);
+        }
+        CombatRenderingManager.addEntity(flare);
+        activeFlares.add(new ActiveFlare(flare));
+    }
+
+    /** 随机尺寸倍率，避免所有光晕完全重合、看起来死板。 */
+    private static float randomMultiplier() {
+        return 0.85f + (float) Math.random() * 0.3f;
+    }
+
+    /** 按基础宽高生成带随机抖动的尺寸。 */
+    private static Vector2f randomScale(float baseWidth, float baseHeight) {
+        float mult = randomMultiplier();
+        return new Vector2f(baseWidth * mult, baseHeight * mult);
+    }
+
+    /** 一个仍在生命周期内的光晕实体及其存活时间。 */
+    private static final class ActiveFlare {
+        private final FlareEntity entity;
+        private float age;
+
+        private ActiveFlare(FlareEntity entity) {
+            this.entity = entity;
         }
     }
 
