@@ -12,7 +12,8 @@
   "shieldRadius": 99,
   "viewOffset": 0,
   "builtInMods": [
-    "automated"
+    "automated",
+    "VIII_Shield"
   ],
   "builtInWeapons": {
     "WS0004": "vpdriver"

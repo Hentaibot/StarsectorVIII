@@ -13,7 +13,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "automated",
-    "advancedcore"
+    "advancedcore",
+    "VIII_Shield"
   ],
   "builtInWeapons": {
     "WS0012": "vortex_launcher",

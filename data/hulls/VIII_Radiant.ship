@@ -12,7 +12,8 @@
   "shieldRadius": 220,
   "viewOffset": 0,
   "builtInMods": [
-    "automated"
+    "automated",
+    "VIII_Shield"
   ],
   "builtInWeapons": {
     "WS0001": "vortex_launcher",

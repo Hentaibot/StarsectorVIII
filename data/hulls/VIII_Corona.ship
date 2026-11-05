@@ -14,7 +14,8 @@
   "builtInMods": [
     "automated",
     "rugged",
-    "missile_reload"
+    "missile_reload",
+    "VIII_Shield"
   ],
   "builtInWeapons": {
     "WS0001": "pusherplate_nova",

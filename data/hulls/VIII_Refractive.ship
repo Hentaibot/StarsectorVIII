@@ -12,7 +12,8 @@
   "shieldRadius": 120,
   "viewOffset": 0,
   "builtInMods": [
-    "automated"
+    "automated",
+    "VIII_Shield"
   ],
   "weaponSlots": [
     {

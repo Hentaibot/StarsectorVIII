@@ -14,7 +14,8 @@
   "builtInMods": [
     "supercomputer",
     "automated",
-    "rugged"
+    "rugged",
+    "VIII_Shield"
   ],
   "builtInWeapons": {
     "WS0033": "VIII_silverlight_cannon"
