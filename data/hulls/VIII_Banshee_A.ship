@@ -14,11 +14,12 @@
   "builtInMods": [
     "automated",
     "missile_reload",
-    "advancedcore"
+    "advancedcore",
+    "VIII_WeaponSwitch"
   ],
   "builtInWeapons": {
     "WS0012": "VIII_Missile_HFA",
-    "WS_HF": "VIII_banshee_hardpoint"
+    
   },
   "weaponSlots": [
     {

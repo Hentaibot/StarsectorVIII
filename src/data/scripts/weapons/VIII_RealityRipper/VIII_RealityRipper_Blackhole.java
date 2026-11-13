@@ -41,6 +41,12 @@ public class VIII_RealityRipper_Blackhole extends BaseCombatLayeredRenderingPlug
     private static final float FADE_OUT_TIME = 0.6F;
     /** 首次出现时的极短淡入，避免硬切。 */
     private static final float FADE_IN_TIME = 0.08F;
+    /** 持续命中时的增大幅度间隔（秒）：每经过该时间增加一次直径。 */
+    private static final float GROWTH_INTERVAL = 0.1F;
+    /** 每次增大的比例（2%）。 */
+    private static final float GROWTH_PER_STEP = 0.02F;
+    /** 最大增大比例（60%）。 */
+    private static final float MAX_GROWTH = 0.60F;
 
     /** 每个光源（武器）对应一个实例，避免同一次持续命中反复创建插件。 */
     private static final Map<Object, VIII_RealityRipper_Blackhole> INSTANCES =
@@ -57,6 +63,10 @@ public class VIII_RealityRipper_Blackhole extends BaseCombatLayeredRenderingPlug
     private float fadeInTimer;
     private float alpha;
     private boolean expired;
+    /** 当前直径倍率（1.0 = 原始大小，最大 1.6）。 */
+    private float sizeMult = 1.0F;
+    /** 增大计时器：持续命中时累计，每满 {@link #GROWTH_INTERVAL} 增大一次。 */
+    private float growthTimer;
 
     private VIII_RealityRipper_Blackhole(CombatEngineAPI engine, Object key, Vector2f point) {
         super(CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER);
@@ -108,6 +118,13 @@ public class VIII_RealityRipper_Blackhole extends BaseCombatLayeredRenderingPlug
             fadeInTimer += amount;
             alpha = Math.min(1.0F, fadeInTimer / FADE_IN_TIME);
             fadeOutTimer = 0.0F;
+
+            // 持续命中：每 0.1 秒把显示直径放大 2%，最多放大到 160%
+            growthTimer += amount;
+            while (growthTimer >= GROWTH_INTERVAL) {
+                growthTimer -= GROWTH_INTERVAL;
+                sizeMult = Math.min(1.0F + MAX_GROWTH, sizeMult + GROWTH_PER_STEP);
+            }
         } else {
             fadeOutTimer += amount;
             alpha = Math.max(0.0F, 1.0F - fadeOutTimer / FADE_OUT_TIME);
@@ -130,7 +147,8 @@ public class VIII_RealityRipper_Blackhole extends BaseCombatLayeredRenderingPlug
 
         // 该层（ABOVE_SHIPS_AND_MISSILES_LAYER）的投影已经是世界坐标，
         // 直接传世界坐标即可；转成屏幕坐标反而会产生相机偏移。
-        sprite.setSize(BASE_SIZE, BASE_SIZE);
+        float size = BASE_SIZE * sizeMult;
+        sprite.setSize(size, size);
         sprite.setAngle(angle);
         sprite.setNormalBlend();
         sprite.setAlphaMult(alpha * viewport.getAlphaMult());

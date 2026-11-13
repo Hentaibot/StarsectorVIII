@@ -14,7 +14,8 @@
   "builtInMods": [
     "automated",
     "missile_reload",
-    "advancedcore"
+    "advancedcore",
+    "VIII_WeaponSwitch"
   ],
   "builtInWeapons": {
     "WS0012": "VIII_Missile_HFB"
@@ -127,7 +128,8 @@
       "arc": 0,
       "angle": 0,
       "locations": [122, -0]
-    }
+    },
+    {"id":"WS_HF","size":"LARGE","type":"BUILT_IN","mount":"HARDPOINT","arc":0,"angle":0,"locations":[151,0],"renderOrderMod":-10.0}
   ],
   "engineSlots": [
     {

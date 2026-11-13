@@ -37,7 +37,7 @@ public class VIII_ShieldRendering extends BaseCombatLayeredRenderingPlugin {
     private static final float EMIT_RADIUS_MULT = 0.44f;
     private static final Color HEX_SWEEP_COLOR = new Color(255, 0, 39,255);
     private static final Color HULL_LINE = new Color(148, 26, 44, 255);
-    private static final Color HIT_COLOR = new Color(255, 0, 0, 255);
+    private static final Color HIT_COLOR = new Color(255, 0, 0, 100);
     private static final int MAX_HITS = 32;
     private static final float BEAM_HIT_COOLDOWN = 0.12f;
 

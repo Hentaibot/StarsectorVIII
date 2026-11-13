@@ -1,0 +1,32 @@
+{
+  "id": "VIII_rift_torpedo_hardpoint_B",
+  "specClass": "projectile",
+  "type": "MISSILE",
+  "size": "LARGE",
+  "turretSprite": "graphics/VIII/weapons/VIII_rift_torpedo_hardpoint_B.png",
+  "hardpointSprite": "graphics/VIII/weapons/VIII_rift_torpedo_hardpoint_B.png",
+  "turretOffsets": [
+    22.5,
+    0
+  ],
+  "hardpointOffsets": [
+    73,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    
+  ],
+  "barrelMode": "ALTERNATING",
+  "renderHints":[RENDER_LOADED_MISSILES],
+  "animationType": "NONE",
+  "projectileSpecId": "rift_torp",
+  "fireSoundTwo": "",
+  "autocharge": true,
+  "fireSoundOne": "rifttorpedo_fire",
+  "mountTypeOverride": "SYNERGY",
+  "restrictToSpecifiedMountType": false
+}

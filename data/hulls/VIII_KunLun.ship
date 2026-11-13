@@ -680,7 +680,17 @@
       "angle": 0,
       "locations": [-172, -145],
       "renderOrderMod": 121
-    }
+    },
+    {"angle":0,"arc":0,"id":"EMP09","locations":[24.5,171],"mount":"TURRET","size":"LARGE","type":"DECORATIVE"},
+    {"angle":0,"arc":0,"id":"EMP10","locations":[24.5,-171],"mount":"TURRET","size":"LARGE","type":"DECORATIVE"},
+    {"angle":0,"arc":0,"id":"EMP07","locations":[154.5,109],"mount":"TURRET","size":"LARGE","type":"DECORATIVE"},
+    {"angle":0,"arc":0,"id":"EMP08","locations":[154.5,-109],"mount":"TURRET","size":"LARGE","type":"DECORATIVE"},
+    {"angle":0,"arc":0,"id":"EMP05","locations":[196.5,127],"mount":"TURRET","size":"LARGE","type":"DECORATIVE"},
+    {"angle":0,"arc":0,"id":"EMP06","locations":[196.5,-127],"mount":"TURRET","size":"LARGE","type":"DECORATIVE"},
+    {"angle":0,"arc":0,"id":"EMP03","locations":[252.5,105],"mount":"TURRET","size":"LARGE","type":"DECORATIVE"},
+    {"angle":0,"arc":0,"id":"EMP04","locations":[252.5,-105],"mount":"TURRET","size":"LARGE","type":"DECORATIVE"},
+    {"angle":0,"arc":0,"id":"EMP01","locations":[219.5,124],"mount":"TURRET","size":"LARGE","type":"DECORATIVE"},
+    {"angle":0,"arc":0,"id":"EMP02","locations":[219.5,-124],"mount":"TURRET","size":"LARGE","type":"DECORATIVE"}
   ],
   "engineSlots": [
     {

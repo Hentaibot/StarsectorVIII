@@ -1,50 +1,24 @@
 package data.scripts.weapons.VIII_RealityRipper;
 
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
-import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.WeaponAPI;
+/**
+ * 上环装饰武器的帧动画：11 帧、每轮 0.35 秒。
+ * 具体节奏由 {@link VIII_RealityRipper_RingEffectBase} 统一控制（跟随主武器前摇与冷却状态）。
+ */
+public class VIII_RealityRipper_Ring_up_Effect extends VIII_RealityRipper_RingEffectBase {
 
-public class VIII_RealityRipper_Ring_up_Effect implements EveryFrameWeaponEffectPlugin {
+    /** 上环总帧数。 */
+    private static final int TOTAL_FRAMES = 11;
 
-    /** 累计经过的时间（秒），用于控制动画循环 */
-    private float elapsed = 0.0F;
+    /** 上环完成一轮的时间（秒）。 */
+    private static final float CYCLE_TIME = 0.35f;
 
-    /**
-     * 每帧调用一次，用于更新武器动画。
-     * 动画共11帧，每1.8秒循环一次。
-     * 游戏暂停、舰船残骸或散热时动画暂停（时间不累积，当前帧不变）。
-     * 过载时正常播放。
-     * @param amount 时间增量（秒）
-     * @param engine 战斗引擎
-     * @param weapon 所作用的武器
-     */
-    public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
-        // 游戏暂停时不更新动画（保持当前帧）
-        if (engine.isPaused()) return;
+    @Override
+    protected int getTotalFrames() {
+        return TOTAL_FRAMES;
+    }
 
-        ShipAPI ship = weapon.getShip();
-
-        // 舰船残骸或散热时，动画暂停（时间不累积，当前帧不变）
-        if (ship.isHulk() || ship.getFluxTracker().isVenting()) {
-            return;
-        }
-
-        // 正常播放动画（过载时也正常播放，无需特殊处理）
-        elapsed += amount;
-
-        float cycleTime = 0.7f;          // 循环周期（秒）
-        int totalFrames = 11;             // 总帧数
-
-        // 循环归零
-        if (elapsed >= cycleTime) {
-            elapsed -= cycleTime;
-        }
-
-        // 计算当前帧：用时间比例乘以总帧数，确保均匀分布
-        int frame = (int) (elapsed / cycleTime * totalFrames);
-        if (frame >= totalFrames) frame = totalFrames - 1; // 边界保护
-
-        weapon.getAnimation().setFrame(frame);
+    @Override
+    protected float getCycleTime() {
+        return CYCLE_TIME;
     }
 }

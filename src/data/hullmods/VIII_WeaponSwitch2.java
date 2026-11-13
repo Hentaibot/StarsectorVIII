@@ -138,6 +138,31 @@ public class VIII_WeaponSwitch2 extends BaseHullMod {
         config.displaySortOrder = 3900;
         config.displayCategoryIndex = 2;
         config.managedWeaponPrefixes.add("VIII_xolotl_MainGun2");
+
+        // ========== 模式组4：报丧女妖（a / b 型）的 WS_HF 硬点 ==========
+        // 模式4-1：裂隙分解器（默认，源插件）
+        config = new hullModComfig("VIII_banshee_HF_beam");
+        HULL_MOD_CONFIGS.put("VIII_banshee_HF_beam", config);
+        config.hulls.add("VIII_banshee_a");              // a 型与 b 型共用同一套切换链
+        config.hulls.add("VIII_banshee_b");
+        config.replaceSlots.put("WS_HF", "VIII_banshee_hardpoint");
+        config.nextHullMod = "VIII_banshee_HF_torpedo";  // 下一个模式是裂隙鱼雷发射器
+        config.sourceHullMod = "VIII_banshee_HF_beam";    // 默认装载的就是本模式
+        config.displaySortOrder = 4000;
+        config.displayCategoryIndex = 3;
+        config.managedWeaponPrefixes.add("VIII_banshee_hardpoint");
+
+        // 模式4-2：裂隙鱼雷发射器
+        config = new hullModComfig("VIII_banshee_HF_torpedo");
+        HULL_MOD_CONFIGS.put("VIII_banshee_HF_torpedo", config);
+        config.hulls.add("VIII_banshee_a");
+        config.hulls.add("VIII_banshee_b");
+        config.replaceSlots.put("WS_HF", "VIII_rift_torpedo_hardpoint_B");
+        config.nextHullMod = "VIII_banshee_HF_beam";      // 再移除一次回到默认
+        config.sourceHullMod = "VIII_banshee_HF_beam";
+        config.displaySortOrder = 4100;
+        config.displayCategoryIndex = 3;
+        config.managedWeaponPrefixes.add("VIII_rift_torpedo");
     }
 
     /**

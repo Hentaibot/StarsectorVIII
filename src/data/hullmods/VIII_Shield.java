@@ -10,7 +10,6 @@ import com.fs.starfarer.api.combat.listeners.AdvanceableListener;
 // 承受伤害修改器，用于修改受到的伤害
 import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 // 渐变器工具，用于平滑过渡数值
-import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.util.FaderUtil;
 // 杂项工具，提供角度、颜色等方法
 import com.fs.starfarer.api.util.Misc;
@@ -23,7 +22,6 @@ import org.lwjgl.util.vector.Vector2f;
 
 // 颜色类
 import java.awt.*;
-import java.util.List;
 
 // 导入自定义渲染类中的常量RENDER_KEY（用于在引擎自定义数据中标记渲染器）
 import static data.hullmods.VIII_ShieldRendering.RENDER_KEY;
@@ -42,8 +40,60 @@ public class VIII_Shield extends BaseHullMod {
     // 标记是否为模块的键
     public static final String IS_MODULE_KEY = "VIII_Shield_is_module";
 
-    /** 护盾接管插件在引擎自定义数据中的键，用于每场战斗只注册一次。 */
-    private static final String CONTROL_PLUGIN_KEY = "VIII_Shield_control_plugin";
+    /** 力场从收起展开到最大所需秒数（与原版护盾一致，原版护盾 AI 也用这个时长做预判）。 */
+    public static final float UNFOLD_TIME = 2f;
+
+    /** 护盾展开速率加成的统计源 ID。 */
+    private static final String UNFOLD_STAT_ID = "VIII_Shield_unfold";
+
+    /** AI 视角下的护盾弧度：AI 判断是否需要展开时读到的值，恒为 360 度。 */
+    private static final float AI_ARC = 360f;
+
+    /** 真实拦截弧度：力场展开时护盾实际弧度，0 度使引擎不判原版护盾命中，伤害由本船插吸收。 */
+    private static final float REAL_ARC = 0f;
+
+    /**
+     * 维持「AI 视角与真实拦截分离」：护盾收起时弧度写成 360 度（AI 判断覆盖正常），
+     * 力场展开后弧度切成 {@link #REAL_ARC}（引擎不判原版护盾命中，命中吸收由本船插的几何判定处理），
+     * 同时给舰船挂上 KEEP_SHIELDS_ON，避免原版 AI 因为看不到护盾覆盖而把力场收起。
+     */
+    private static void syncShieldArc(ShipAPI ship) {
+        ShieldAPI shield = ship.getShield();
+        if (shield == null) return;
+        if (shield.isOn()) {
+            if (shield.getArc() != REAL_ARC) {
+                shield.setArc(REAL_ARC);
+            }
+            ShipwideAIFlags flags = ship.getAIFlags();
+            if (flags != null) {
+                flags.setFlag(ShipwideAIFlags.AIFlags.KEEP_SHIELDS_ON, 0.5f);
+            }
+        } else {
+            if (shield.getArc() != AI_ARC) {
+                shield.setArc(AI_ARC);
+            }
+            if (shield.getActiveArc() < AI_ARC - 1f) {
+                shield.setActiveArc(AI_ARC);
+            }
+        }
+    }
+
+    /**
+     * 按引擎展开时间公式反解并写入护盾展开速率，使力场恰好在 {@link #UNFOLD_TIME} 秒内展开到最大。
+     * <p>引擎公式（com.fs.starfarer.combat.systems.G#getUnfoldTime）：
+     * 2 * 半径 * PI * (弧度/360) / (100 * 展开速率)，ShieldType.FRONT 再除以 2。</p>
+     */
+    private static void applyUnfoldRate(ShipAPI ship) {
+        if (ship == null) return;
+        ShieldAPI shield = ship.getShield();
+        if (shield == null) return;
+        float arc = shield.getArc();
+        float radius = shield.getRadius();
+        if (arc <= 0f || radius <= 0f) return;
+        float divisor = shield.getType() == ShieldAPI.ShieldType.FRONT ? 200f : 100f;
+        float rate = (float) (Math.PI * radius * (arc / 360.0) / divisor);
+        ship.getMutableStats().getShieldUnfoldRateMult().modifyMult(UNFOLD_STAT_ID, rate);
+    }
 
     // 船体插件应用效果钩子：创建并注册护盾脚本实例（确保每船一个）
     @Override
@@ -84,8 +134,8 @@ public class VIII_Shield extends BaseHullMod {
      * @param id 效果ID
      */
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        // 大幅提升护盾展开速率
-        stats.getShieldUnfoldRateMult().modifyMult(id, 3.5f);
+        // 展开速率不在这里设置：由 VIII_ShieldScript.init 与每帧 applyUnfoldRate 反解，
+        // 保证力场恰好 UNFOLD_TIME 秒展开到最大，原版护盾 AI 的展开时长快照才是 2 秒。
     }
 
     // 每战斗帧调用：确保渲染器实例存在（用于自定义护盾绘制）
@@ -96,196 +146,10 @@ public class VIII_Shield extends BaseHullMod {
         if (engine != null && !engine.getCustomData().containsKey(RENDER_KEY))
             VIII_ShieldRendering.getInstance();
 
-        // 注册护盾接管插件：插件在所有舰船推进之后执行，是每帧最后写入护盾状态的一方
-        ensureControlPlugin(engine);
-
         // 如果是主体舰船，每帧清理已死亡的子模块上的监听器，并确保存活模块有监听器
         if (ship.getParentStation() == null) { // 主体
             cleanupDeadModules(ship);
             ensureAliveModulesHaveListener(ship);
-        }
-    }
-
-    /** 出现威胁、开始展开力场的敌舰半径 */
-    private static final float AI_RAISE_RANGE = 1400f;
-    /** 已经展开时，维持力场的敌舰半径（比 AI_RAISE_RANGE 大，避免在边界反复开合） */
-    private static final float AI_KEEP_RANGE = 2000f;
-    /** 敌方弹体被视为威胁的半径 */
-    private static final float AI_PROJECTILE_RANGE = 1000f;
-    /** 最近受到伤害视为威胁的秒数 */
-    private static final float AI_RECENT_DAMAGE_TIME = 1.0f;
-    /** 展开后至少维持的秒数，避免与 AI 判定抖动 */
-    private static final float AI_MIN_ON_TIME = 1.2f;
-    /** 最短维持计时器在舰船自定义数据中的键 */
-    private static final String AI_HOLD_KEY = "VIII_Shield_ai_hold";
-
-    /**
-     * AI 舰船的力场开关逻辑。
-     *
-     * <p>原版护盾的渲染被关闭、覆盖范围也被改写后，原版 AI 判断不出力场是否有效，
-     * 会反复下发开/关护盾指令，表现为护盾频繁闪烁。这里屏蔽这些指令，并用接近
-     * 原版护盾 AI 的观感驱动力场：有威胁（敌舰进入 <code>AI_RAISE_RANGE</code>、
-     * 敌方弹体靠近、最近刚挨打）时展开；已经展开时只要附近还有敌舰
-     * （<code>AI_KEEP_RANGE</code>）就维持，威胁离开后收束；过载、排散、阵亡、
-     * 残骸时关闭；展开后至少维持 <code>AI_MIN_ON_TIME</code> 秒，避免一开一关抖动。</p>
-     */
-    private static void updateAIShieldControl(ShipAPI ship, float amount) {
-        CombatEngineAPI engine = Global.getCombatEngine();
-        if (engine == null || ship == null) {
-            return;
-        }
-        // 玩家亲自驾驶的舰船保持手动控制；开启自动操作（自动驾驶）时按 AI 舰船处理。
-        // 注意：不能用 engine.isUIAutopilotOn() 判断——反编译显示它返回的是 !autopilot，
-        // 语义与实际相反；改用玩家舰是否被挂上 AI（自动驾驶会 setAI，手动驾驶为 null）。
-        if (ship == engine.getPlayerShip() && ship.getAI() == null) {
-            return;
-        }
-        // 模块的护盾状态跟随主体，不单独控制
-        if (ship.getParentStation() != null) {
-            return;
-        }
-        ShieldAPI shield = ship.getShield();
-        if (shield == null) {
-            return;
-        }
-        // 相位舰的同一指令控制相位，交回原版 AI
-        if (ship.getPhaseCloak() != null) {
-            return;
-        }
-
-        // 屏蔽原版 AI 本帧的开/关护盾指令。本方法由战斗插件在舰船推进之后调用，
-        // 这条屏蔽会保留到下一帧的指令过滤阶段，AI 的开/关指令不会生效。
-        ship.blockCommandForOneFrame(ShipCommand.TOGGLE_SHIELD_OR_PHASE_CLOAK);
-
-        FluxTrackerAPI flux = ship.getFluxTracker();
-        boolean usable = ship.isAlive() && !ship.isHulk()
-                && !flux.isOverloaded() && !flux.isVenting();
-
-        ShipwideAIFlags flags = ship.getAIFlags();
-        boolean keepFlag = flags != null && flags.hasFlag(ShipwideAIFlags.AIFlags.KEEP_SHIELDS_ON);
-
-        float hold = getHoldTimer(ship);
-        if (hold > 0f) {
-            hold = Math.max(0f, hold - amount);
-        }
-
-        boolean threatened = usable && isThreatened(engine, ship);
-
-        boolean wantOn;
-        if (!usable) {
-            // 无法维持防御：立即关闭
-            wantOn = false;
-            hold = 0f;
-        } else if (keepFlag || threatened) {
-            // 原版 AI 要求保持护盾，或出现威胁：展开力场并刷新最短维持时间
-            wantOn = true;
-            hold = AI_MIN_ON_TIME;
-        } else if (hold > 0f) {
-            // 刚展开不久：威胁暂时离开也先维持，避免反复开合
-            wantOn = true;
-        } else {
-            // 已经展开且附近仍有敌舰则维持，否则与原版 AI 一样收束力场
-            wantOn = shield.isOn() && isEnemyNearby(engine, ship, AI_KEEP_RANGE);
-        }
-
-        setHoldTimer(ship, hold);
-
-        if (wantOn) {
-            if (!shield.isOn()) {
-                shield.toggleOn();
-            }
-        } else if (shield.isOn()) {
-            shield.toggleOff();
-        }
-    }
-
-    /** 是否存在威胁：最近挨打、敌舰进入展开半径、或敌方弹体进入弹体半径。 */
-    private static boolean isThreatened(CombatEngineAPI engine, ShipAPI ship) {
-        if (ship.getSinceLastDamageTaken() <= AI_RECENT_DAMAGE_TIME) {
-            return true;
-        }
-        if (isEnemyNearby(engine, ship, AI_RAISE_RANGE)) {
-            return true;
-        }
-        Vector2f location = ship.getLocation();
-        float range2 = AI_PROJECTILE_RANGE * AI_PROJECTILE_RANGE;
-        List<DamagingProjectileAPI> projectiles = engine.getProjectiles();
-        if (projectiles != null) {
-            for (DamagingProjectileAPI projectile : projectiles) {
-                if (projectile == null || projectile.getOwner() == ship.getOwner()) {
-                    continue;
-                }
-                if (distanceSq(location, projectile.getLocation()) <= range2) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    /** 半径内是否有存活的敌对舰船。 */
-    private static boolean isEnemyNearby(CombatEngineAPI engine, ShipAPI ship, float range) {
-        Vector2f location = ship.getLocation();
-        float range2 = range * range;
-        for (ShipAPI other : engine.getShips()) {
-            if (other == ship || other.getOwner() == ship.getOwner()) {
-                continue;
-            }
-            if (!other.isAlive() || other.isHulk()) {
-                continue;
-            }
-            if (distanceSq(location, other.getLocation()) <= range2) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /** 不取平方根的平方距离，用于逐帧距离比较。 */
-    private static float distanceSq(Vector2f a, Vector2f b) {
-        float dx = a.x - b.x;
-        float dy = a.y - b.y;
-        return dx * dx + dy * dy;
-    }
-
-    /** 读取力场最短维持计时器。 */
-    private static float getHoldTimer(ShipAPI ship) {
-        Object value = ship.getCustomData().get(AI_HOLD_KEY);
-        return value instanceof Float ? (Float) value : 0f;
-    }
-
-    /** 写回力场最短维持计时器。 */
-    private static void setHoldTimer(ShipAPI ship, float value) {
-        ship.getCustomData().put(AI_HOLD_KEY, value);
-    }
-
-    /** 每场战斗只注册一次护盾接管插件。 */
-    private static void ensureControlPlugin(CombatEngineAPI engine) {
-        if (engine == null || engine.getCustomData().containsKey(CONTROL_PLUGIN_KEY)) {
-            return;
-        }
-        ShieldControlPlugin plugin = new ShieldControlPlugin();
-        engine.addPlugin(plugin);
-        engine.getCustomData().put(CONTROL_PLUGIN_KEY, plugin);
-    }
-
-    /**
-     * 护盾接管插件：在战斗引擎推进完所有舰船之后执行，是每帧最后写入护盾状态的一方。
-     * 它按接近原版护盾 AI 的观感控制带本船插的舰船的力场开关，避免原版 AI 反复开关。
-     */
-    public static class ShieldControlPlugin extends BaseEveryFrameCombatPlugin {
-        @Override
-        public void advance(float amount, List<InputEventAPI> events) {
-            CombatEngineAPI engine = Global.getCombatEngine();
-            if (engine == null || engine.isPaused()) {
-                return;
-            }
-            for (ShipAPI ship : engine.getShips()) {
-                if (ship == null || !VIII_ShieldScript.hasShield(ship)) {
-                    continue;
-                }
-                updateAIShieldControl(ship, amount);
-            }
         }
     }
 
@@ -370,7 +234,7 @@ public class VIII_Shield extends BaseHullMod {
         private final TimeoutTracker<BeamAPI> effected = new TimeoutTracker<>();
 
         /**
-         * 初始化护盾属性：设定护盾角度为0（全向）、半径等于碰撞半径微调、
+         * 初始化护盾属性：护盾弧度恒为 360 度（只为 AI 视角）、半径按碰撞半径微调、
          * 以及完全透明的护盾视觉（因为自定义渲染接管显示）。
          * 对于模块，跳过这些修改（模块的护盾由主体统一控制，且模块不会渲染独立护盾）。
          */
@@ -384,11 +248,15 @@ public class VIII_Shield extends BaseHullMod {
             }
 
             if (ship.getShield() != null) {
-                ship.getShield().setArc(0f);  // 0度表示360度全覆盖
+                // 弧度恒为 360 度：原版护盾 AI 在出战时构造，读到的是全向覆盖
+                ship.getShield().setArc(AI_ARC);
+                ship.getShield().setActiveArc(AI_ARC);
+                // 半径按原版规则（碰撞半径减去吨位修正），展开后靠 0 度弧度避开引擎的护盾判定
                 ship.getShield().setRadius(Math.max(10f, ship.getCollisionRadius() - ship.getHullSize().ordinal() * 10f));
                 ship.getShield().setSkipRendering(true);  // 禁用原版护盾渲染
                 ship.getShield().setInnerColor(new Color(0, 0, 0, 0));
                 ship.getShield().setRingColor(new Color(0, 0, 0, 0));
+                applyUnfoldRate(ship);  // 反解展开速率，使力场 2 秒展开到最大
             }
         }
 
@@ -589,12 +457,16 @@ public class VIII_Shield extends BaseHullMod {
             // 模块不执行护盾主动效果（由主体统一管理）
             if (isModule(ship)) return;
 
+            // 让原版护盾 AI 以 360 度视角判断力场，同时保持实际拦截弧度为 0 度
+            syncShieldArc(ship);
+
             // 主体舰船：如果护盾存在且开启，执行护盾主动效果
             if (ship.getShield() != null) {
                 if (ship.getShield().isOn()) {
                     immuneEMPEffects(true);
-                    // 推进展开动画
-                    shieldSpread.advance(amount * ship.getMutableStats().getShieldUnfoldRateMult().getModifiedValue());
+                    // 推进展开动画：速率固定，保证与引擎侧 2 秒展开一致
+                    applyUnfoldRate(ship);
+                    shieldSpread.advance(amount * getSpreadRate());
                     // 强制护盾朝向舰船后方（180度相对），实现全向护盾视觉效果
                     ship.getShield().forceFacing(Misc.normalizeAngle(ship.getFacing() + 180f));
                     ship.getMutableStats().getEmpDamageTakenMult().modifyMult(getKey(), 0f);
@@ -718,6 +590,12 @@ public class VIII_Shield extends BaseHullMod {
 
         public static String getKey() {
             return KEY;
+        }
+
+        /** 展开动画每秒推进的倍率（渐变器淡入时长 / 目标展开时长）。 */
+        private float getSpreadRate() {
+            float duration = shieldSpread.getDurationIn();
+            return duration > 0f ? duration / UNFOLD_TIME : 1f;
         }
 
         // 获取护盾展开程度（0~1），由渐变器控制
